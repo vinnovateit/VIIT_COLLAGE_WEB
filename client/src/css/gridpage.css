@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(10,minmax(10px,100vh));
+    grid-template-rows: repeat(10,minmax(10px,10vh));
+}
+
+.custom{
+    background-color: black;
+    width: 100%;
+    grid-column: 9/11;
+}
+
+.greedy img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
