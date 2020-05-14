@@ -1,21 +1,107 @@
-*{
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
 }
-.grid{
-    display: grid;
-    grid-template-columns: repeat(10,minmax(10px,100vh));
-    grid-template-rows: repeat(10,minmax(10px,10vh));
-}
-
-.custom{
-    background-color: black;
-    width: 100%;
-    grid-column: 9/11;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(10px, 15vh));
+  grid-template-rows: repeat(10, minmax(10px, 9vh));
+  margin: 20px;
 }
 
-.greed img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.greed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.greedy {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1px solid black;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.greedy {
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.greedy:hover {
+  background-color: rgb(27, 26, 26);
+  transform: scale(1.1);
+  color: wheat;
+  border-radius: 10px;
+}
+.right {
+  margin: 20px;
+  width: 300px;
+  margin-left: 0;
+  font-family: "Jost", sans-serif;
+}
+.right h1 {
+  margin: 20px 0;
+}
+.input-label {
+  font-size: 17px;
+  text-transform: uppercase;
+
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  color: #615651;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.input-block {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 10px 10px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.input-block input {
+  outline: 0;
+  border: 0;
+  padding: 4px 0 0;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+.input-block input::-webkit-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block input::-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block input:-ms-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block input::-ms-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block input::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block:focus-within {
+  border-color: #8c7569;
+}
+.input-block:focus-within .input-label {
+  color: rgba(140, 117, 105, 0.8);
 }
