@@ -1,28 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
-
+import "../css/gridpage.css";
+import { loaddom } from "../actions/initialActions";
 const Interface = () => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
+  const string = useSelector((state) => state.domReducer.string);
+  const dispatch = useDispatch();
+  let elements = [];
   const select = (e) => {
+    console.log(e.target.value);
     elements.push(Number(e.target.id));
     document.getElementById(e.target.id).style.background = "rgb(27, 26, 26)";
     document.getElementById(e.target.id).style.color = "wheat";
   };
-
+  useEffect(() => {
+    async function getdata() {
+      await dispatch(loaddom());
+    }
+    getdata();
+    const html = $($.parseHTML(string));
+    for (var i = 0; i < html.length; i++) {
+      if (html[i].className == "greedy") html[i].onclick = select;
+      document.querySelector(".grid").append(html[i]);
+    }
+  }, []);
   let array = [];
   for (var i = 0; i < 100; i++) {
     array.push(1);
   }
   i = 0;
-  let elements = [];
 
   const logic = () => {
     if (elements.length == 1) {
       let html = document.createElement("div");
       let img = document.createElement("img");
-      img.src =
-        "https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+      img.src = url;
       html.appendChild(img);
       html.className = "greed";
       var refy = document.getElementById(`${elements[0]}`);
@@ -72,28 +86,14 @@ const Interface = () => {
       html.style.gridColumn = col;
       html.style.gridRow = row;
       html.className = "greed";
-      let ref = document.getElementById(`${elements[0]}`);
-      ref.after(html);
-      for (var i = 0; i < elements.length; i++) {
-        document.getElementById(`${elements[i]}`).remove();
-      }
+      console.log(elements);
       elements = [];
     }
     console.log(document.querySelector(".grid").innerHTML);
   };
   return (
     <div style={{ display: "flex" }} className="interface">
-      <div className="grid">
-        {" "}
-        {array.map((ele) => {
-          i++;
-          return (
-            <div id={i} className="greedy" onClick={select}>
-              select
-            </div>
-          );
-        })}
-      </div>
+      <div className="grid"></div>
       <div className="right">
         <h1>Test Here</h1>
         <div class="input-block">

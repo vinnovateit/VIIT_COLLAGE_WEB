@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
-import "./css/gridpage.css";
-import randomHexColor from "random-hex-color";
-import $ from "jquery";
 import Interface from "./components/Interface";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+
 const App = () => {
   return (
-    <div>
-      <Interface />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/interface" component={Interface} />
+      </Switch>
+    </Router>
   );
 };
 
