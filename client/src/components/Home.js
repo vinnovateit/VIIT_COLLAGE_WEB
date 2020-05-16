@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/home.css";
+import { Link } from "react-router-dom";
 import Image from "../assests/VinnovateIT-shape.png";
 const Home = () => {
   return (
@@ -12,7 +13,9 @@ const Home = () => {
       <div className="center">
         <h1>Amlost before we knew, we left the ground</h1>
         <div className="buttons">
-          <button className="btn">Wall of Craziness</button>
+          <Link to="/interface" className="btn">
+            Wall of Craziness
+          </Link>
           <button className="btn">Wall of Craziness</button>
           <button className="btn">Wall of Craziness</button>
           <button className="btn">Wall of Craziness</button>
