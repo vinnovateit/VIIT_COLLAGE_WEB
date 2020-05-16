@@ -9,10 +9,16 @@ const Interface = () => {
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
+
   const select = (e) => {
-    if (elements.includes(Number(e.target.id)))
-      return alert("cant select twice");
-    setElements((oldArray) => [...oldArray, Number(e.target.id)]);
+    setElements((oldArray) => {
+      if (oldArray.includes(Number(e.target.id))) {
+        alert("nonono");
+        return setElements([...oldArray]);
+      }
+
+      return [...oldArray, Number(e.target.id)];
+    });
     document.getElementById(e.target.id).style.background = "rgb(27, 26, 26)";
     document.getElementById(e.target.id).style.color = "wheat";
   };
@@ -23,6 +29,12 @@ const Interface = () => {
   i = 0;
 
   const logic = () => {
+    elements.sort();
+    let maxy = Math.max(...elements);
+    let miny = Math.min(...elements);
+    let diff = Number(("" + maxy)[1]) - Number(("" + miny)[1]) + 1;
+    if (diff * diff != elements.length)
+      return alert("please select consecutive elements");
     if (elements.length == 1) {
       let html = document.createElement("div");
       let img = document.createElement("img");

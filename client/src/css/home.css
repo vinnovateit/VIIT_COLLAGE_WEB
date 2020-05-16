@@ -58,6 +58,7 @@
   z-index: 111111111111;
   cursor: pointer;
   font-family: "PT Sans", sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 .btn:hover {
@@ -77,6 +78,7 @@
 
 .bottom h4 {
   font-size: 1.25rem;
+  font-family: "PT Sans", sans-serif;
   margin: 10px;
 }
 
