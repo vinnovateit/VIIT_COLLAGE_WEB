@@ -6,7 +6,9 @@
 
     git clone <url>
     npm install
-    npm client-install
+    cd client
+    npm install
+    cd ..
     npm run dev
 
 # BASIC GUIDELINES
