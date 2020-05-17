@@ -19,7 +19,7 @@
 
 .fadey {
   background-color: rgb(36, 34, 34);
-  opacity: 0.76;
+  opacity: 0.8;
   position: absolute;
   top: 0;
   left: 0;
@@ -48,13 +48,14 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
   background-color: white;
   margin: 10px;
   border-radius: 20px;
-  opacity: 0.7;
+  opacity: 0.8;
   z-index: 111111111111;
   cursor: pointer;
   font-family: "PT Sans", sans-serif;

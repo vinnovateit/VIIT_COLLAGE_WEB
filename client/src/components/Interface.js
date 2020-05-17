@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import "../css/gridpage.css";
-import { loaddom } from "../actions/initialActions";
+import { loaddom, updatedomlocal, updatedom } from "../actions/initialActions";
 const Interface = () => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
@@ -29,12 +30,13 @@ const Interface = () => {
   i = 0;
 
   const logic = () => {
-    elements.sort();
-    let maxy = Math.max(...elements);
-    let miny = Math.min(...elements);
-    let diff = Number(("" + maxy)[1]) - Number(("" + miny)[1]) + 1;
-    if (diff * diff != elements.length)
-      return alert("please select consecutive elements");
+    let array = elements.sort();
+    for (var i = 0; i < array.length - 1; i++) {
+      let diff = array[i + 1] - array[i];
+      if (diff == 1);
+      else if (diff == 9) console.log(diff);
+      else console.log(diff);
+    }
     if (elements.length == 1) {
       let html = document.createElement("div");
       let img = document.createElement("img");
@@ -92,9 +94,25 @@ const Interface = () => {
       for (var i = 0; i < elements.length; i++) {
         document.getElementById(`${elements[i]}`).remove();
       }
+      setPrice(elements.length * 5);
       setElements([]);
     }
     console.log(document.querySelector(".grid").innerHTML);
+  };
+  const drop = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "kvssankar");
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/sankarkvs/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const file = await res.json();
+    setUrl(file.secure_url);
   };
   useEffect(() => {
     async function getdata() {
@@ -111,24 +129,9 @@ const Interface = () => {
     <div style={{ display: "flex" }} className="interface">
       <div className="grid"></div>
       <div className="right">
-        <h1>Test Here</h1>
+        <h1>Preview</h1>
         <div class="input-block">
-          <label for="password" class="input-label">
-            Url
-          </label>
-          <input
-            type="text"
-            name="url"
-            id="url"
-            value={url}
-            onChange={(e) => {
-              setUrl(e.target.value);
-            }}
-            placeholder="Enter Url Of Image"
-          />
-        </div>
-        <div class="input-block">
-          <label for="password" class="input-label">
+          <label for="name" class="input-label">
             Name
           </label>
           <input
@@ -138,8 +141,40 @@ const Interface = () => {
             placeholder="Enter Title of Image"
           />
         </div>
-        <h1>now select grids and click on submit</h1>
-        <button onClick={logic}>submit</button>
+        <div class="input-block">
+          <label for="url" class="input-label">
+            Upload Image
+          </label>
+          <input id="file" name="file" type="file" onChange={drop} />
+        </div>
+        <div class="input-block">
+          <label for="name" class="input-label">
+            Price
+          </label>
+          <input type="text" name="name" id="name" disabled value={price} />
+        </div>
+        <div class="alert alert-primary" role="alert">
+          Select grids
+        </div>
+        <button
+          className="btn btn-primary"
+          style={{ opacity: 1, color: "black" }}
+          onClick={() => {
+            logic();
+            dispatch(updatedomlocal());
+          }}
+        >
+          preview
+        </button>
+        <button
+          className="btn btn-success"
+          style={{ opacity: 1, color: "black" }}
+          onClick={() => {
+            dispatch(updatedom());
+          }}
+        >
+          pay
+        </button>
       </div>
     </div>
   );

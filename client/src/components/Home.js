@@ -16,9 +16,6 @@ const Home = () => {
           <Link to="/interface" className="btn">
             Wall of Craziness
           </Link>
-          <button className="btn">Wall of Craziness</button>
-          <button className="btn">Wall of Craziness</button>
-          <button className="btn">Wall of Craziness</button>
         </div>
       </div>
       <div className="bottom">

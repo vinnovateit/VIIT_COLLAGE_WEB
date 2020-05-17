@@ -43,7 +43,10 @@
   margin: 20px;
   width: 300px;
   margin-left: 0;
+  padding: 10px;
   font-family: "Jost", sans-serif;
+  border: 1px solid;
+  border-radius: 10px;
 }
 .right h1 {
   margin: 20px 0;
