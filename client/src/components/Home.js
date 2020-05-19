@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/home.css";
 import { Link } from "react-router-dom";
 import Image from "../assests/VinnovateIT-shape.png";
+import { useDispatch } from "react-redux";
+import { loaddom } from "../actions/initialActions";
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    async function getdata() {
+      await dispatch(loaddom());
+    }
+    getdata();
+  }, []);
   return (
     <div>
       <div className="bg"></div>

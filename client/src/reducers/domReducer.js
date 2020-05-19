@@ -1,5 +1,6 @@
 const initialState = {
   string: "",
+  wall: "",
 };
 const domReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -7,7 +8,7 @@ const domReducer = (state = initialState, action) => {
     case "UPDATE_DOM":
       return {
         ...state,
-        string: action.payload,
+        string: action.payload.string,
       };
     case "UPDATE_DOM_LOCAL":
       localStorage.setItem("dom", action.payload);

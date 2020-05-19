@@ -12,17 +12,30 @@ const Interface = () => {
   const [elements, setElements] = useState([]);
 
   const select = (e) => {
+    var error = 0;
     setElements((oldArray) => {
+      if (oldArray.length == 0) return [...oldArray, Number(e.target.id)];
+      const diff = oldArray[oldArray.length - 1] - Number(e.target.id);
       if (oldArray.includes(Number(e.target.id))) {
-        alert("nonono");
+        alert("You have already selected the grid");
+        error = 1;
         return setElements([...oldArray]);
       }
-
-      return [...oldArray, Number(e.target.id)];
+      if (diff == 1 || diff == -1 || diff == 10 || diff == -10) {
+        return [...oldArray, Number(e.target.id)];
+      } else {
+        alert("please select consequetive grids only");
+        error = 1;
+        return [...oldArray];
+      }
     });
-    document.getElementById(e.target.id).style.background = "rgb(27, 26, 26)";
-    document.getElementById(e.target.id).style.color = "wheat";
+    if (!error) {
+      document.getElementById(e.target.id).style.background = "rgb(27, 26, 26)";
+      document.getElementById(e.target.id).style.color = "wheat";
+    }
+    error = 0;
   };
+
   let array = [];
   for (var i = 0; i < 100; i++) {
     array.push(1);
@@ -30,13 +43,6 @@ const Interface = () => {
   i = 0;
 
   const logic = () => {
-    let array = elements.sort();
-    for (var i = 0; i < array.length - 1; i++) {
-      let diff = array[i + 1] - array[i];
-      if (diff == 1);
-      else if (diff == 9) console.log(diff);
-      else console.log(diff);
-    }
     if (elements.length == 1) {
       let html = document.createElement("div");
       let img = document.createElement("img");
@@ -151,7 +157,7 @@ const Interface = () => {
           <label for="name" class="input-label">
             Price
           </label>
-          <input type="text" name="name" id="name" disabled value={price} />
+          <input type="text" name="price" id="price" disabled value={price} />
         </div>
         <div class="alert alert-primary" role="alert">
           Select grids
@@ -159,9 +165,11 @@ const Interface = () => {
         <button
           className="btn btn-primary"
           style={{ opacity: 1, color: "black" }}
-          onClick={() => {
-            logic();
-            dispatch(updatedomlocal());
+          onClick={async () => {
+            await logic();
+            await dispatch(
+              updatedomlocal(document.querySelector(".grid").innerHTML)
+            );
           }}
         >
           preview

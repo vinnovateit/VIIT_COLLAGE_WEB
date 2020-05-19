@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const domSchema = Schema(
   {
     string: String,
-    url: String,
+    wall: String,
     name: String,
   },
   { collection: "dom" }

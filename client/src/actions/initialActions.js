@@ -1,11 +1,14 @@
 import axios from "axios";
 export const updatedom = () => (dispatch) => {
   axios
-    .post("/dom/update", { string: localStorage.getItem("dom") })
+    .post("/dom/update", {
+      string: localStorage.getItem("dom"),
+      id: "5ec37bad021cb63fbe3f31ff",
+    })
     .then((res) =>
       dispatch({
         type: "UPDATE_DOM",
-        payload: res.data.string,
+        payload: res.data,
       })
     );
 };
@@ -16,11 +19,11 @@ export const updatedomlocal = (a) => {
     payload: a,
   };
 };
-export const loaddom = (a) => (dispatch) => {
-  axios.get("/dom/get").then((res) =>
+export const loaddom = () => (dispatch) => {
+  axios.post("/dom/load", { id: "5ec37bad021cb63fbe3f31ff" }).then((res) =>
     dispatch({
       type: "LOAD_DOM",
-      payload: res.data.string,
+      payload: res.data,
     })
   );
 };

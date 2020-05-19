@@ -20,7 +20,12 @@ const Display = () => {
       document.querySelector(".grid-display").append(html[i]);
     }
   }, []);
-  return <div className="grid-display"></div>;
+  return (
+    <div>
+      <div className="grid-display rainbow"></div>
+      <div className="bgd"></div>
+    </div>
+  );
 };
 
 export default Display;
