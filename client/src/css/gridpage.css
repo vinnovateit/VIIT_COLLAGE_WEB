@@ -13,8 +13,8 @@
 
 .grid-display {
   display: grid;
-  grid-template-columns: repeat(10, minmax(10px, 15vh));
-  grid-template-rows: repeat(10, minmax(10px, 9vh));
+  grid-template-columns: repeat(10, minmax(10px, 100vh));
+  grid-template-rows: repeat(10, minmax(10px, 10vh));
   margin: 10px;
 }
 
