@@ -20,7 +20,7 @@ const Home = () => {
         W<span class="fast-flicker">A</span>LL-<span class="flicker">E</span>
       </div>
       <div className="center">
-        <h1>An Electronic Ad wall</h1>
+        <h1>Make your memories eternal through the wheel of time...</h1>
         <div className="buttons">
           <Link to="/display" className="btn">
             click here to view
