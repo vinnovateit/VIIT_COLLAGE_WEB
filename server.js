@@ -4,7 +4,7 @@ const app = express();
 const config = require("config");
 app.use(express.json());
 const server = require("http").createServer(app);
-
+const path = require("path");
 const db = config.get("mongoURI");
 //connect to mongo
 const connect = mongoose
