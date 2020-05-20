@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import "../css/gridpage.css";
+import vedio from "../assests/Space - 2381.mp4";
 import { loaddom } from "../actions/initialActions";
+import { Link } from "react-router-dom";
+
 const Display = () => {
   const dispatch = useDispatch();
   const string = useSelector((state) => state.domReducer.string);
@@ -21,9 +24,21 @@ const Display = () => {
     }
   }, []);
   return (
-    <div>
-      <div className="grid-display rainbow"></div>
-      <div className="bgd"></div>
+    <div className="display-page">
+      <h1>Time files but memories remain</h1>
+      <div className="grid-display"></div>
+      <div className="videp-container">
+        <video autoPlay loop muted className="bgd">
+          <source src={vedio} type="video/mp4" />
+        </video>
+      </div>
+      <Link to="/interface">
+        <img
+          src="https://image.flaticon.com/icons/svg/1828/1828817.svg"
+          alt=""
+          className="add"
+        />
+      </Link>
     </div>
   );
 };

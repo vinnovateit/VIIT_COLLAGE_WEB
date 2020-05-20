@@ -30,7 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.1px solid black;
+  border: 0.1px solid white;
   margin: 0;
   cursor: pointer;
   transition: 0.3s;
@@ -38,6 +38,7 @@
 
 .greedy {
   font-family: "Balsamiq Sans", cursive;
+  color: white;
 }
 
 .greedy:hover {
@@ -52,11 +53,12 @@
   margin-left: 0;
   padding: 10px;
   font-family: "Jost", sans-serif;
-  border: 1px solid;
+  border: 1px solid white;
   border-radius: 10px;
 }
 .right h1 {
   margin: 20px 0;
+  color: white;
 }
 .input-label {
   font-size: 17px;
@@ -65,7 +67,7 @@
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   letter-spacing: 0.7px;
-  color: #615651;
+  color: white;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -88,6 +90,8 @@
   padding: 4px 0 0;
   font-size: 14px;
   font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  color: white;
 }
 .input-block input::-webkit-input-placeholder {
   color: #ccc;

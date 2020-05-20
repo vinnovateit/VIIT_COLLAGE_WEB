@@ -1,9 +1,20 @@
 const initialState = {
   string: "",
   wall: "",
+  isLoading: false,
 };
 const domReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "LOADING_START":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "LOADING_STOP":
+      return {
+        ...state,
+        isLoading: false,
+      };
     case "LOAD_DOM":
     case "UPDATE_DOM":
       return {

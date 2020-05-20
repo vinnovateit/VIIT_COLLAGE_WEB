@@ -22,8 +22,8 @@ const Home = () => {
       <div className="center">
         <h1>Amlost before we knew, we left the ground</h1>
         <div className="buttons">
-          <Link to="/interface" className="btn">
-            Wall of Craziness
+          <Link to="/display" className="btn">
+            Wall of Memories
           </Link>
         </div>
       </div>

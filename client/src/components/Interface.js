@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import "../css/gridpage.css";
-import { loaddom, updatedomlocal, updatedom } from "../actions/initialActions";
+import {
+  loaddom,
+  updatedomlocal,
+  updatedom,
+  loadingstart,
+  loadingstop,
+} from "../actions/initialActions";
 const Interface = () => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
@@ -105,8 +111,9 @@ const Interface = () => {
     }
     console.log(document.querySelector(".grid").innerHTML);
   };
-  const drop = async (e) => {
-    const files = e.target.files;
+  const drop = async () => {
+    const files = document.getElementById("file").files;
+    if (!files) return alert("no files uploaded");
     const data = new FormData();
     data.append("file", files[0]);
     data.append("upload_preset", "kvssankar");
@@ -121,6 +128,8 @@ const Interface = () => {
     setUrl(file.secure_url);
   };
   useEffect(() => {
+    localStorage.clear("dom");
+    document.querySelector("body").style.background = "black";
     async function getdata() {
       await dispatch(loaddom());
     }
@@ -138,7 +147,7 @@ const Interface = () => {
         <h1>Preview</h1>
         <div class="input-block">
           <label for="name" class="input-label">
-            Name
+            Title
           </label>
           <input
             type="text"
@@ -151,7 +160,16 @@ const Interface = () => {
           <label for="url" class="input-label">
             Upload Image
           </label>
-          <input id="file" name="file" type="file" onChange={drop} />
+          <input
+            id="file"
+            name="file"
+            type="file"
+            onChange={async () => {
+              await dispatch(loadingstart());
+              await drop();
+              dispatch(loadingstop());
+            }}
+          />
         </div>
         <div class="input-block">
           <label for="name" class="input-label">
@@ -178,7 +196,8 @@ const Interface = () => {
           className="btn btn-success"
           style={{ opacity: 1, color: "black" }}
           onClick={() => {
-            dispatch(updatedom());
+            //dispatch(updatedom());
+            alert("this feature will be added soon");
           }}
         >
           pay

@@ -27,3 +27,15 @@ export const loaddom = () => (dispatch) => {
     })
   );
 };
+
+export const loadingstart = () => {
+  return {
+    type: "LOADING_START",
+  };
+};
+
+export const loadingstop = () => {
+  return {
+    type: "LOADING_STOP",
+  };
+};
