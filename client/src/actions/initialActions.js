@@ -67,7 +67,7 @@ export const pay = (a) => (dispatch) => {
           contact: "",
         },
       };
-      var rzp1 = new Razorpay(options);
+      var rzp1 = new window.Razorpay(options);
       rzp1.open();
     })
     .catch((err) => console.log(err));
