@@ -112,7 +112,7 @@ const Interface = () => {
       for (var i = 0; i < elements.length; i++) {
         document.getElementById(`${elements[i]}`).remove();
       }
-      setPrice(elements.length * 5);
+      setPrice((oldprice) => oldprice + elements.length * 5);
       setElements([]);
     }
     console.log(document.querySelector(".grid").innerHTML);
@@ -206,15 +206,13 @@ const Interface = () => {
         >
           preview
         </button>
+
         <button
-          className="btn btn-success"
+          id="rzp-button1"
           style={{ opacity: 1, color: "black" }}
-          onClick={() => {
-            //dispatch(updatedom());
-            alert("this feature will be added soon");
-          }}
+          class="btn btn-primary btn-block"
         >
-          pay
+          Pay
         </button>
       </div>
     </div>

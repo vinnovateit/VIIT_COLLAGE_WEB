@@ -39,3 +39,14 @@ export const loadingstop = () => {
     type: "LOADING_STOP",
   };
 };
+
+//razorpay
+export const pay = (a) => (dispatch) => {
+  axios.post("/razorpay", { amount: a }).then(async (res) => {
+    await dispatch(updatedom());
+    dispatch({
+      type: "PAYED",
+      payload: res.data,
+    });
+  });
+};
