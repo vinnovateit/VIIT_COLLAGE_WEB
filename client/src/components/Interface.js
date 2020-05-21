@@ -16,7 +16,13 @@ const Interface = () => {
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
-
+  const clear = () => {
+    for (var i = 0; i < elements.length; i++) {
+      document.getElementById(`${elements[i]}`).style.background =
+        "transparent";
+    }
+    setElements([]);
+  };
   const select = (e) => {
     var error = 0;
     setElements((oldArray) => {
@@ -180,6 +186,14 @@ const Interface = () => {
         <div class="alert alert-primary" role="alert">
           Select grids
         </div>
+
+        <button
+          className="btn btn-danger"
+          style={{ opacity: 1, color: "black" }}
+          onClick={clear}
+        >
+          clear
+        </button>
         <button
           className="btn btn-primary"
           style={{ opacity: 1, color: "black" }}

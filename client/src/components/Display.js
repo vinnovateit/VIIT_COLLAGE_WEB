@@ -17,7 +17,14 @@ const Display = () => {
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       if (html[i].className == "greedy") {
+        let img = document.createElement("img");
+        img.setAttribute(
+          "src",
+          "https://images-na.ssl-images-amazon.com/images/I/41lx%2BxHBEBL._SX425_.jpg"
+        );
+        img.setAttribute("class", "melon");
         html[i].innerHTML = "";
+        html[i].append(img);
         html[i].style.pointerEvents = "none";
       }
       document.querySelector(".grid-display").append(html[i]);
@@ -32,7 +39,7 @@ const Display = () => {
           <source src={vedio} type="video/mp4" />
         </video>
       </div> */}
-      <div className="bgd"></div>
+      {/* <div className="bgd"></div> */}
       <Link to="/interface">
         <img
           src="https://image.flaticon.com/icons/svg/1828/1828817.svg"
