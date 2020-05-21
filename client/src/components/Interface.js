@@ -8,10 +8,11 @@ import {
   updatedom,
   loadingstart,
   loadingstop,
+  pay,
 } from "../actions/initialActions";
 const Interface = () => {
   const [url, setUrl] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [price, setPrice] = useState("");
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ const Interface = () => {
         "transparent";
     }
     setElements([]);
+    setPrice(0);
+    localStorage.clear("dom");
   };
   const select = (e) => {
     var error = 0;
@@ -135,7 +138,7 @@ const Interface = () => {
   };
   useEffect(() => {
     localStorage.clear("dom");
-    document.querySelector("body").style.background = "black";
+    document.querySelector("body").style.background = "#f1f2f6";
     async function getdata() {
       await dispatch(loaddom());
     }
@@ -153,13 +156,17 @@ const Interface = () => {
         <h1>Preview</h1>
         <div class="input-block">
           <label for="name" class="input-label">
-            Title
+            Email
           </label>
           <input
             type="text"
-            name="name"
-            id="name"
-            placeholder="Enter Title of Image"
+            name="email"
+            id="email"
+            value={email}
+            placeholder="Enter your email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
         </div>
         <div class="input-block">
@@ -187,16 +194,11 @@ const Interface = () => {
           Select grids
         </div>
 
-        <button
-          className="btn btn-danger"
-          style={{ opacity: 1, color: "black" }}
-          onClick={clear}
-        >
+        <button className="btn btn-danger" onClick={clear}>
           clear
         </button>
         <button
           className="btn btn-primary"
-          style={{ opacity: 1, color: "black" }}
           onClick={async () => {
             await logic();
             await dispatch(
@@ -208,9 +210,10 @@ const Interface = () => {
         </button>
 
         <button
-          id="rzp-button1"
-          style={{ opacity: 1, color: "black" }}
-          class="btn btn-primary btn-block"
+          class="btn btn-success"
+          onClick={() => {
+            dispatch(pay(price));
+          }}
         >
           Pay
         </button>

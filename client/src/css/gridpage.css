@@ -43,7 +43,7 @@
 
 .greedy {
   font-family: "Balsamiq Sans", cursive;
-  color: white;
+  color: black;
 }
 
 .greedy:hover {
@@ -56,23 +56,23 @@
   margin: 20px;
   width: 300px;
   margin-left: 0;
-  padding: 10px;
   font-family: "Jost", sans-serif;
   border: 1px solid grey;
-  border-radius: 10px;
 }
 .right h1 {
-  margin: 20px 0;
+  background-color: #485460;
+  padding: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
   color: white;
 }
 .input-label {
   font-size: 17px;
   text-transform: uppercase;
-
-  font-family: "Nunito", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   letter-spacing: 0.7px;
-  color: white;
+  color: rgb(54, 50, 50);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -83,9 +83,9 @@
   -webkit-box-direction: normal;
   flex-direction: column;
   padding: 10px 10px 8px;
-  border: 1px solid #ddd;
+  border: 1px solid grey;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin: 20px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -96,31 +96,34 @@
   font-size: 14px;
   font-family: "Nunito", sans-serif;
   background-color: transparent;
-  color: white;
+  color: rgb(54, 50, 50);
 }
-.input-block input::-webkit-input-placeholder {
-  color: #ccc;
+input::-webkit-input-placeholder {
+  color: rgb(54, 50, 50);
+
   opacity: 1;
 }
-.input-block input::-moz-placeholder {
-  color: #ccc;
+input::-moz-placeholder {
+  color: rgb(54, 50, 50);
+
   opacity: 1;
 }
-.input-block input:-ms-input-placeholder {
-  color: #ccc;
+input:-ms-input-placeholder {
+  color: rgb(54, 50, 50);
+
   opacity: 1;
 }
-.input-block input::-ms-input-placeholder {
-  color: #ccc;
+input::-ms-input-placeholder {
+  color: rgb(54, 50, 50);
+
   opacity: 1;
 }
-.input-block input::placeholder {
-  color: #ccc;
+input::placeholder {
+  color: rgb(54, 50, 50);
+
   opacity: 1;
 }
-.input-block:focus-within {
-  border-color: #8c7569;
-}
-.input-block:focus-within .input-label {
-  color: rgba(140, 117, 105, 0.8);
+
+.alert-primary {
+  margin: 10px;
 }
