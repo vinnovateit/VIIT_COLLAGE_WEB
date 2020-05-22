@@ -14,6 +14,7 @@ const Interface = () => {
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
   const [price, setPrice] = useState("");
+  const [pre, setPre] = useState(0);
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
@@ -21,28 +22,17 @@ const Interface = () => {
     for (var i = 0; i < elements.length; i++) {
       document.getElementById(`${elements[i]}`).style.background =
         "transparent";
+      document.getElementById(`${elements[i]}`).style.color = "black";
     }
     setElements([]);
     setPrice(0);
+    setPre(0);
     localStorage.clear("dom");
   };
   const select = (e) => {
     var error = 0;
     setElements((oldArray) => {
-      if (oldArray.length == 0) return [...oldArray, Number(e.target.id)];
-      const diff = oldArray[oldArray.length - 1] - Number(e.target.id);
-      if (oldArray.includes(Number(e.target.id))) {
-        alert("You have already selected the grid");
-        error = 1;
-        return setElements([...oldArray]);
-      }
-      if (diff == 1 || diff == -1 || diff == 10 || diff == -10) {
-        return [...oldArray, Number(e.target.id)];
-      } else {
-        alert("please select consequetive grids only");
-        error = 1;
-        return [...oldArray];
-      }
+      return [...oldArray, Number(e.target.id)];
     });
     if (!error) {
       document.getElementById(e.target.id).style.background = "rgb(27, 26, 26)";
@@ -56,7 +46,41 @@ const Interface = () => {
     array.push(1);
   }
   i = 0;
-
+  const check = () => {
+    let listy = [];
+    for (let i = 0; i < 11; i++) {
+      let a = [];
+      for (let j = 0; j < 11; j++) {
+        a.push(0);
+      }
+      listy.push(a);
+    }
+    let maxrow = -1,
+      maxcol = -1,
+      minrow = 101,
+      mincol = 101,
+      temp,
+      row,
+      col;
+    for (let i = 0; i < elements.length; i++) {
+      temp = elements[i];
+      row = Math.floor(temp / 10);
+      if (temp % 10 != 0) row++;
+      col = temp - (row - 1) * 10;
+      listy[row][col] = 1;
+      maxrow = Math.max(maxrow, row);
+      minrow = Math.min(minrow, row);
+      maxcol = Math.max(maxcol, col);
+      mincol = Math.min(mincol, col);
+    }
+    for (var i = minrow; i <= maxrow; i++) {
+      for (var j = mincol; j <= maxcol; j++) {
+        if (listy[i][j] != 1) {
+          return alert("please select a box");
+        }
+      }
+    }
+  };
   const logic = () => {
     if (elements.length == 1) {
       let html = document.createElement("div");
@@ -117,6 +141,7 @@ const Interface = () => {
       }
       setPrice((oldprice) => oldprice + elements.length * 5);
       setElements([]);
+      setPre(1);
     }
     console.log(document.querySelector(".grid").innerHTML);
   };
@@ -200,6 +225,9 @@ const Interface = () => {
         <button
           className="btn btn-primary"
           onClick={async () => {
+            check();
+            if (elements.length == 0) return alert("Please select grids");
+            if (url == "") return alert("Please upload image");
             await logic();
             await dispatch(
               updatedomlocal(document.querySelector(".grid").innerHTML)
@@ -212,6 +240,8 @@ const Interface = () => {
         <button
           class="btn btn-success"
           onClick={() => {
+            if (check()) return alert("please select a box");
+            if (!pre) return alert("please upload image");
             dispatch(pay(price));
           }}
         >

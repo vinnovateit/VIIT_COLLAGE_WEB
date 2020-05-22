@@ -45,7 +45,6 @@ export const pay = (a) => (dispatch) => {
   axios
     .post("/razorpay", { amount: a })
     .then(async (x) => {
-      await dispatch(updatedom());
       const amnt = x.data.amount; //amount returned by backend
       const curr = x.data.currency; //currency returned by backend
       const idd = x.data.id; //order_id returned by order API
@@ -57,9 +56,10 @@ export const pay = (a) => (dispatch) => {
         description: "",
         order_id: idd,
         handler: function (response) {
-          alert(response.razorpay_payment_id);
-          alert(response.razorpay_order_id);
-          alert(response.razorpay_signature);
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
+          dispatch(updatedom());
         },
         prefill: {
           name: "",

@@ -22,7 +22,7 @@ const Home = () => {
       <div className="center">
         <h1>Make your memories eternal through the wheel of time...</h1>
         <div className="buttons">
-          <Link to="/display" className="btn">
+          <Link to="/display" className="btn btn-secondary">
             click here to view
           </Link>
         </div>

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=PT+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
 
 * {
   margin: 0;
@@ -21,16 +22,16 @@
 
 .bgd {
   position: absolute;
-  background: black;
+  background: url("https://images.unsplash.com/photo-1515330877652-c5c2a95addf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80");
+  background-repeat: no-repeat;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   pointer-events: none;
-  z-index: -1;
-  opacity: 1;
+  z-index: -3;
   margin: 0;
-  object-fit: cover;
+  background-size: cover;
 }
 
 .fadey {
@@ -45,14 +46,30 @@
   z-index: 1;
 }
 
+.fadeyy {
+  background-color: rgb(36, 34, 34);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: -2;
+}
+
 .display-page h1 {
   position: absolute;
-  top: 10px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  font-family: "Josefin Sans", sans-serif;
+  transform: translate(-50%, -50%);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 40px;
   color: white;
-  margin: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+  z-index: 1232435;
+  text-shadow: 0px 11px 10px rgba(71, 70, 66, 0.8);
   animation: fade-away 10s forwards ease-out;
 }
 
