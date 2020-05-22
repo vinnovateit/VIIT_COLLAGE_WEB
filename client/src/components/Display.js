@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import "../css/gridpage.css";
-import vedio from "../assests/Space - 2381.mp4";
 import { loaddom } from "../actions/initialActions";
 import { Link } from "react-router-dom";
 
