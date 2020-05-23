@@ -9,6 +9,7 @@ import {
   loadingstart,
   loadingstop,
   pay,
+  initialdom,
 } from "../actions/initialActions";
 const Interface = () => {
   const [url, setUrl] = useState("");
@@ -18,7 +19,7 @@ const Interface = () => {
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
-  const clear = () => {
+  const clear = async () => {
     for (var i = 0; i < elements.length; i++) {
       document.getElementById(`${elements[i]}`).style.background =
         "transparent";
@@ -27,7 +28,8 @@ const Interface = () => {
     setElements([]);
     setPrice(0);
     setPre(0);
-    localStorage.clear("dom");
+    await dispatch(initialdom());
+    window.location.reload();
   };
   const select = (e) => {
     var error = 0;
@@ -175,7 +177,7 @@ const Interface = () => {
     }
   }, []);
   return (
-    <div style={{ display: "flex" }} className="interface">
+    <div className="interface">
       <div className="grid"></div>
       <div className="right">
         <h1>Preview</h1>

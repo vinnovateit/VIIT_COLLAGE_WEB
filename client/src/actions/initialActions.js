@@ -27,6 +27,11 @@ export const loaddom = () => (dispatch) => {
     })
   );
 };
+export const initialdom = () => {
+  return {
+    type: "CLEAR",
+  };
+};
 
 export const loadingstart = () => {
   return {
@@ -56,9 +61,6 @@ export const pay = (a) => (dispatch) => {
         description: "",
         order_id: idd,
         handler: function (response) {
-          // alert(response.razorpay_payment_id);
-          // alert(response.razorpay_order_id);
-          // alert(response.razorpay_signature);
           dispatch(updatedom());
         },
         prefill: {

@@ -17,9 +17,15 @@ const domReducer = (state = initialState, action) => {
       };
     case "LOAD_DOM":
     case "UPDATE_DOM":
+      localStorage.setItem("prevdom", action.payload.string);
       return {
         ...state,
         string: action.payload.string,
+      };
+    case "CLEAR":
+      return {
+        ...state,
+        string: localStorage.getItem("prevdom"),
       };
     case "UPDATE_DOM_LOCAL":
       localStorage.setItem("dom", action.payload);
