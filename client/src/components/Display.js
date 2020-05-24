@@ -29,6 +29,7 @@ const Display = () => {
       <h1>
         "The moments may have ended but the memories last forever <tr />♥ ♥ ♥ "
       </h1>
+
       <div className="grid-display"></div>
       <div className="bgd"></div>
       <div className="fadeyy"></div>
