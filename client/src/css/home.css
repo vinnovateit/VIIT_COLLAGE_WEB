@@ -357,10 +357,23 @@
   }
   .bottom h4 {
     font-size: 1rem;
+    margin: 0;
+    text-align: center;
   }
   .display-page h1 {
     letter-spacing: 0.1rem;
     font-size: 1.3rem;
     width: 90%;
+  }
+  .bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 50px;
+    right: unset;
+    padding: 10px;
   }
 }
