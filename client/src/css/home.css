@@ -82,6 +82,16 @@
   }
 }
 
+.btn-home {
+  border-radius: 20px;
+  background: transparent;
+  letter-spacing: 0.1rem;
+}
+
+.btn-home:hover {
+  background: rgb(88, 85, 85);
+}
+
 .add {
   position: absolute;
   right: 0;
@@ -331,5 +341,26 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .center {
+    width: 90%;
+  }
+  .sign {
+    top: 37%;
+    font-size: 3rem;
+  }
+  .center h1 {
+    font-size: 1.5rem;
+  }
+  .bottom h4 {
+    font-size: 1rem;
+  }
+  .display-page h1 {
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+    width: 90%;
   }
 }

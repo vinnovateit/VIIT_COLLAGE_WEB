@@ -164,6 +164,7 @@ const Interface = () => {
     setUrl(file.secure_url);
   };
   useEffect(() => {
+    alert("For better experience open in desktop :)");
     localStorage.clear("dom");
     document.querySelector("body").style.background = "#f1f2f6";
     async function getdata() {
