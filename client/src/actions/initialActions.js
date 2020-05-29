@@ -44,33 +44,3 @@ export const loadingstop = () => {
     type: "LOADING_STOP",
   };
 };
-
-//razorpay
-export const pay = (a) => (dispatch) => {
-  axios
-    .post("/razorpay", { amount: a })
-    .then(async (x) => {
-      const amnt = x.data.amount; //amount returned by backend
-      const curr = x.data.currency; //currency returned by backend
-      const idd = x.data.id; //order_id returned by order API
-      var options = {
-        key: "rzp_test_Bqx6B6JlLxprFZ", //add your razorpay account key
-        amount: amnt,
-        currency: curr,
-        name: "",
-        description: "",
-        order_id: idd,
-        handler: function (response) {
-          dispatch(updatedom());
-        },
-        prefill: {
-          name: "",
-          email: "",
-          contact: "",
-        },
-      };
-      var rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    })
-    .catch((err) => console.log(err));
-};

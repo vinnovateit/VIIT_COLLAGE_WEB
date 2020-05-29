@@ -21,6 +21,7 @@ const domReducer = (state = initialState, action) => {
       return {
         ...state,
         string: action.payload.string,
+        isLoading: false,
       };
     case "CLEAR":
       return {

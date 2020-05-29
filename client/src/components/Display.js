@@ -4,6 +4,7 @@ import $ from "jquery";
 import "../css/gridpage.css";
 import { loaddom } from "../actions/initialActions";
 import { Link } from "react-router-dom";
+import image from "../assests/melon2.png";
 
 const Display = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,15 @@ const Display = () => {
   return (
     <div className="display-page">
       <h1>
-        "The moments may have ended but the memories last forever <tr />♥ ♥ ♥ "
+        Keep the memories of your life
+        <br />
+        Warm and In Time ! <br />
+        Beacause they're ...
       </h1>
-
+      <div className="melonimage">
+        <img src={image} alt="" />
+        <h4>ONE IN A MELON</h4>
+      </div>
       <div className="grid-display"></div>
       <div className="bgd"></div>
       <div className="fadeyy"></div>

@@ -23,7 +23,7 @@ const Home = () => {
         <h1>Make your memories eternal through the wheel of time...</h1>
         <div className="buttons">
           <Link to="/display" className="btn btn-secondary btn-home">
-            Proceed
+            Click here for eternity
           </Link>
         </div>
       </div>

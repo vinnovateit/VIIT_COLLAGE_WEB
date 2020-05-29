@@ -1,0 +1,55 @@
+.canvas {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  margin: 40px auto 40px;
+  background: url("../assests/st.png") no-repeat;
+  background-size: cover;
+}
+
+.tag {
+  position: absolute;
+  background-color: rgb(85, 80, 80);
+  color: white;
+  bottom: -10px;
+  right: -10px;
+  margin: 0;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+}
+
+.tag h1 {
+  margin: 0;
+  font-family: "Cedarville Cursive", cursive;
+
+  font-size: 1.2rem;
+}
+
+.tag img {
+  height: 20px;
+}
+
+/* .tag1 {
+  bottom: 10px;
+  right: -25px;
+  transform: rotate(-40deg);
+}
+
+.tag2 {
+  bottom: 10px;
+  left: -25px;
+  transform: rotate(40deg);
+}
+
+.tag3 {
+  top: 10px;
+  left: -25px;
+  transform: rotate(-40deg);
+}
+
+.tag4 {
+  top: 10px;
+  right: -25px;
+  transform: rotate(40deg);
+} */

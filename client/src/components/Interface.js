@@ -8,9 +8,10 @@ import {
   updatedom,
   loadingstart,
   loadingstop,
-  pay,
   initialdom,
 } from "../actions/initialActions";
+import { useHistory } from "react-router-dom";
+
 const Interface = () => {
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
@@ -177,6 +178,14 @@ const Interface = () => {
       document.querySelector(".grid").append(html[i]);
     }
   }, []);
+  const history = useHistory();
+
+  const routeChange = async () => {
+    await dispatch(loadingstart());
+    await dispatch(updatedom());
+    let path = "/download";
+    history.push(path);
+  };
   return (
     <div className="interface">
       <div className="grid"></div>
@@ -245,10 +254,11 @@ const Interface = () => {
           onClick={() => {
             if (check()) return alert("please select a box");
             if (!pre) return alert("please upload image");
-            dispatch(pay(price));
+            alert("Are you sure ?");
+            dispatch(updatedom());
           }}
         >
-          Pay
+          Creative word
         </button>
       </div>
     </div>

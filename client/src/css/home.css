@@ -22,7 +22,7 @@
 
 .bgd {
   position: absolute;
-  background: url("https://images.unsplash.com/photo-1515330877652-c5c2a95addf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80");
+  background: url("../assests/st.png");
   background-repeat: no-repeat;
   top: 0;
   left: 0;
@@ -31,12 +31,13 @@
   pointer-events: none;
   z-index: -3;
   margin: 0;
+  opacity: 1;
   background-size: cover;
 }
 
 .fadey {
   background-color: rgb(36, 34, 34);
-  opacity: 0.8;
+  opacity: 0.7;
   position: absolute;
   top: 0;
   left: 0;
@@ -60,17 +61,17 @@
 
 .display-page h1 {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 20%;
   transform: translate(-50%, -50%);
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Glitter";
   font-size: 40px;
-  color: white;
-  text-align: center;
-  letter-spacing: 5px;
+  color: #f7bc7a;
+  text-align: left;
+  letter-spacing: 2px;
   z-index: 1232435;
   text-shadow: 0px 11px 10px rgba(71, 70, 66, 0.8);
-  animation: fade-away 10s forwards ease-out;
+  animation: fade-away 15s forwards ease-out;
 }
 
 @keyframes fade-away {
@@ -84,8 +85,12 @@
 
 .btn-home {
   border-radius: 20px;
-  background: transparent;
-  letter-spacing: 0.1rem;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  background: rgb(88, 85, 85);
+  /* background: rgba(255, 255, 255, 0.5); */
+  font-family: "Cedarville Cursive", cursive;
 }
 
 .btn-home:hover {
@@ -112,9 +117,30 @@
 .center h1 {
   font-family: "Cedarville Cursive", cursive;
   font-size: 2rem;
+  margin: 10px;
   letter-spacing: 0.1rem;
   text-align: center;
-  color: wheat;
+  color: #f7cb7a;
+}
+.melonimage {
+  position: absolute;
+  pointer-events: none;
+  bottom: 30px;
+  right: 30px;
+  z-index: 11111111111111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fade-away 10s forwards ease-out;
+}
+
+.melonimage h4 {
+  color: white;
+}
+
+.display-page .melonimage img {
+  height: 200px;
 }
 
 .buttons {
@@ -146,6 +172,11 @@
 @font-face {
   font-family: Clip;
   src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
+
+@font-face {
+  font-family: Glitter;
+  src: url("../assests/I\ Love\ Glitter\ -\ TTF.ttf");
 }
 
 .sign {
