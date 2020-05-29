@@ -18,7 +18,7 @@
 .grid-display {
   display: grid;
   grid-template-columns: repeat(10, minmax(10px, 100vh));
-  grid-template-rows: repeat(10, minmax(10px, 1fr));
+  grid-template-rows: repeat(10, minmax(10px, 10vh));
   /* border: solid 10px white; */
   z-index: 1111111;
 }

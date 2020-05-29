@@ -23,7 +23,7 @@ const Download = () => {
         // html[i].style.background = "#333";
         html[i].style.pointerEvents = "none";
       }
-      document.querySelector(".grid-display").append(html[i]);
+      document.querySelector(".canvas").append(html[i]);
     }
   }, []);
   const share = async () => {
@@ -49,7 +49,6 @@ const Download = () => {
   return (
     <div>
       <div id="canvas" className="canvas">
-        <div className="grid-display"></div>
         <div className="tag tag1">
           <h1>VinnoavetIT</h1>
           <img src={image} alt="" />
