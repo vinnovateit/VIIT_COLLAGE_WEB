@@ -27,27 +27,28 @@ const Download = () => {
     }
   }, []);
   const share = async () => {
-    var element = $(".canvas")[0]; // global variable
+    var element = $("#canvas")[0]; // global variable
     var getCanvas; // global variable
-    html2canvas(element).then(function (blob) {
-      console.log("working");
-      const file = new File([blob], "dot.png", blob);
-      if (navigator.share) {
-        navigator.share({
-          files: [file],
-          title: "working",
-          text: "hurray",
-          url: "https://theclubhouse3000.herokuapp.com/",
-        });
-      } else {
-        alert("this feature is only acompatible with mobiles");
-      }
+    html2canvas(element).then(async function (canvas) {
+      var blob = await canvas.toBlob(function (blob) {
+        const file = new File([blob], "dot.png", blob);
+        if (navigator.share) {
+          navigator.share({
+            files: [file],
+            title: "working",
+            text: "hurray",
+            url: "https://theclubhouse3000.herokuapp.com/",
+          });
+        } else {
+          alert("this feature is only acompatible with mobiles");
+        }
+      });
     });
   };
 
   return (
     <div>
-      <div className="canvas">
+      <div id="canvas" className="canvas">
         <div className="grid-display"></div>
         <div className="tag tag1">
           <h1>VinnoavetIT</h1>
