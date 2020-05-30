@@ -29,8 +29,8 @@ const Download = () => {
     }
   }, []);
   const download = async () => {
-    document.getElementById("canvas").style.width = "100%";
-    document.getElementById("canvas").style.height = "100%";
+    document.getElementById("canvas").style.width = "1519px";
+    document.getElementById("canvas").style.height = "950px";
     await domtoimage
       .toJpeg(document.getElementById("canvas"), { quality: 1 })
       .then(function (dataUrl) {
@@ -43,6 +43,10 @@ const Download = () => {
       document.getElementById("canvas").style.width = "40%";
 
       document.getElementById("canvas").style.height = "40%";
+    } else {
+      document.getElementById("canvas").style.width = "100%";
+
+      document.getElementById("canvas").style.height = "100%";
     }
   };
 
