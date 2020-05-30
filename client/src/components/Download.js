@@ -41,6 +41,7 @@ const Download = () => {
       });
     if (!navigator.share) {
       document.getElementById("canvas").style.width = "40%";
+
       document.getElementById("canvas").style.height = "40%";
     }
   };
