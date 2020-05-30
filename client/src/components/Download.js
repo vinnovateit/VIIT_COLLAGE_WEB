@@ -12,7 +12,7 @@ const Download = () => {
   const dispatch = useDispatch();
   const string = useSelector((state) => state.domReducer.string);
   useEffect(() => {
-    document.querySelector("body").style.background = "whitesmoke";
+    document.querySelector("body").style.background = "rgb(224, 213, 213)";
     async function getdata() {
       await dispatch(loaddom());
     }
@@ -28,31 +28,48 @@ const Download = () => {
       document.querySelector(".canvas").append(html[i]);
     }
   }, []);
-  const share = async () => {
-    // domtoimage.toBlob(document.getElementById("canvas")).then(function (blob) {
-    //   window.saveAs(blob, "my-node.png");
-    // });
+  const download = async () => {
     document.getElementById("canvas").style.width = "100%";
     document.getElementById("canvas").style.height = "100%";
     await domtoimage
       .toJpeg(document.getElementById("canvas"), { quality: 1 })
       .then(function (dataUrl) {
         var link = document.createElement("a");
-        link.download = "my-image-name.jpeg";
+        link.download = "wall-e.jpeg";
         link.href = dataUrl;
         link.click();
       });
-    document.getElementById("canvas").style.width = "40%";
-    document.getElementById("canvas").style.height = "40%";
+    if (!navigator.share) {
+      document.getElementById("canvas").style.width = "40%";
+      document.getElementById("canvas").style.height = "40%";
+    }
+  };
+
+  const share = () => {
+    domtoimage.toBlob(document.getElementById("canvas")).then(function (blob) {
+      const file = new File([blob], "dot.png", blob);
+      if (navigator.share) {
+        navigator.share({
+          files: [file],
+          title: "Wall-E",
+          text:
+            "Keep the memories of your life Warm and In Time ! Beacause they're ...",
+          url: "https://the-wall-e.herokuapp.com/",
+        });
+      } else {
+        alert("this feature is only acompatible with mobiles");
+      }
+    });
   };
 
   return (
     <div>
-      <div id="canvas" className="canvas">
-        <div className="bgd"></div>
-        <div className="tag">
-          <h1>WallE</h1>
-          <img src={image} alt="" />
+      <div className="parent-canvas" id="canvas">
+        <div className="canvas">
+          <div className="tag">
+            <h1>WallE</h1>
+            <img src={image} alt="" />
+          </div>
         </div>
       </div>
       <div className="message">
@@ -61,9 +78,14 @@ const Download = () => {
           time ! Download the memory wall as a photo and post on instagram story
           after taging us @VinnovateIT ❤️❤️❤️
         </div>
-        <a className="btn btn-primary" id="download" onClick={share}>
-          share
-        </a>
+        <div className="btns">
+          <a className="btn btn-primary" id="download" onClick={download}>
+            Download
+          </a>
+          <button className="btn btn-success" onClick={share}>
+            Share
+          </button>
+        </div>
       </div>
     </div>
   );

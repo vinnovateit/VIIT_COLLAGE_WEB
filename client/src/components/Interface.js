@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import $ from "jquery";
 import "../css/gridpage.css";
 import {
@@ -10,12 +11,11 @@ import {
   loadingstop,
   initialdom,
 } from "../actions/initialActions";
-import { useHistory } from "react-router-dom";
 
 const Interface = () => {
+  const history = useHistory();
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
-  const [price, setPrice] = useState("");
   const [pre, setPre] = useState(0);
   const string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
@@ -27,7 +27,6 @@ const Interface = () => {
       document.getElementById(`${elements[i]}`).style.color = "black";
     }
     setElements([]);
-    setPrice(0);
     setPre(0);
     await dispatch(initialdom());
     window.location.reload();
@@ -142,7 +141,6 @@ const Interface = () => {
       for (var i = 0; i < elements.length; i++) {
         document.getElementById(`${elements[i]}`).remove();
       }
-      setPrice((oldprice) => oldprice + elements.length * 5);
       setElements([]);
       setPre(1);
     }
@@ -165,8 +163,6 @@ const Interface = () => {
     setUrl(file.secure_url);
   };
   useEffect(() => {
-    alert("For better experience open in desktop :)");
-    localStorage.clear("dom");
     document.querySelector("body").style.background = "#f1f2f6";
     async function getdata() {
       await dispatch(loaddom());
@@ -178,14 +174,7 @@ const Interface = () => {
       document.querySelector(".grid").append(html[i]);
     }
   }, []);
-  const history = useHistory();
 
-  const routeChange = async () => {
-    await dispatch(loadingstart());
-    await dispatch(updatedom());
-    let path = "/download";
-    history.push(path);
-  };
   return (
     <div className="interface">
       <div className="grid"></div>
@@ -221,12 +210,7 @@ const Interface = () => {
             }}
           />
         </div>
-        <div class="input-block">
-          <label for="name" class="input-label">
-            Price
-          </label>
-          <input type="text" name="price" id="price" disabled value={price} />
-        </div>
+
         <div class="alert alert-primary" role="alert">
           Select grids
         </div>
@@ -251,14 +235,15 @@ const Interface = () => {
 
         <button
           class="btn btn-success"
-          onClick={() => {
+          onClick={async () => {
             if (check()) return alert("please select a box");
             if (!pre) return alert("please upload image");
             alert("Are you sure ?");
-            dispatch(updatedom());
+            await dispatch(updatedom());
+            history.push(`/download`);
           }}
         >
-          Creative word
+          Proceed
         </button>
       </div>
     </div>

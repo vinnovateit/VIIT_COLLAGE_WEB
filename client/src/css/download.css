@@ -1,8 +1,11 @@
-.canvas {
+.parent-canvas {
   position: relative;
   width: 40%;
   height: 40%;
   margin: 10px auto 40px;
+}
+
+.canvas {
   padding: 0;
   background: rgb(5, 5, 5);
   display: grid;
@@ -65,4 +68,57 @@
   justify-self: center;
   color: white;
   font-family: "Chelsea Market", cursive;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .parent-canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .canvas {
+    padding: 0;
+    background: rgb(5, 5, 5);
+    display: grid;
+    grid-template-columns: repeat(10, minmax(10px, 100fr));
+    grid-template-rows: repeat(10, minmax(10px, 1fr));
+    /* border: solid 10px white; */
+    z-index: 1111111;
+    border-radius: 5px;
+  }
+  .message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #8083c9;
+    position: absolute;
+    top: 40%;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 23px;
+    border-radius: 5px;
+  }
+  .message .text {
+    font-size: 1.1rem;
+  }
+  .tag {
+    padding: 5px;
+  }
+  .tag h1 {
+    margin: 0;
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .tag img {
+    height: 15px;
+    margin-left: 7px;
+  }
 }
