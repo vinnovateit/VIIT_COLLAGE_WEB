@@ -10,6 +10,7 @@ const Display = () => {
   const dispatch = useDispatch();
   const string = useSelector((state) => state.domReducer.string);
   useEffect(() => {
+    document.querySelector("body").style.background = "black";
     async function getdata() {
       await dispatch(loaddom());
     }
@@ -38,7 +39,6 @@ const Display = () => {
         <h4>ONE IN A MELON</h4>
       </div>
       <div className="grid-display"></div>
-      <div className="fadeyy"></div>
       <Link to="/interface">
         <img
           src="https://image.flaticon.com/icons/svg/1828/1828817.svg"

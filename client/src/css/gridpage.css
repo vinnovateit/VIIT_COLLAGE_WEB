@@ -146,7 +146,6 @@ input::placeholder {
   .greed img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
   .grid {
     display: grid;
@@ -169,7 +168,7 @@ input::placeholder {
     position: relative;
     width: 90%;
     margin-left: 0;
-    margin: 10px;
+    margin: 20px;
     font-family: "Jost", sans-serif;
     border: 1px solid grey;
   }

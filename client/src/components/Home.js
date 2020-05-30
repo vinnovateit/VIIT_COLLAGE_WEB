@@ -28,7 +28,7 @@ const Home = () => {
         </div>
       </div>
       <div className="bottom">
-        <h4>Made with ♥ by VinnovateIT</h4>
+        <h4>Made with ❤️ by VinnovateIT</h4>
       </div>
     </div>
   );
