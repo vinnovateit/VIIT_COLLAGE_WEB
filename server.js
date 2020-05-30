@@ -3,40 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const config = require("config");
 
-const Razorpay = require("razorpay");
-const shortid = require("shortid");
-const cors = require("cors");
-
-app.use(cors());
 app.use(express.json());
-
-//razor pay
-const razorpay = new Razorpay({
-  key_id: "rzp_test_Bqx6B6JlLxprFZ", //add your razorpay account details
-  key_secret: "Ws9osOaOeh3qmrkkAyTmWZKg",
-});
-
-app.post("/razorpay", (req, res) => {
-  const { amount } = req.body;
-  const payment_capture = 1;
-
-  const options = {
-    amount: amount * 100,
-    currency: "INR",
-    receipt: shortid.generate(),
-    payment_capture,
-  };
-
-  razorpay.orders.create(options).then((result) => {
-    console.log(result);
-    res.json({
-      id: result.id,
-      currency: result.currency,
-      amount: result.amount,
-    });
-  });
-});
-//razor pay
 
 const server = require("http").createServer(app);
 

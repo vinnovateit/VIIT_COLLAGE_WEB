@@ -22,6 +22,7 @@
 
 .bgd {
   position: absolute;
+  filter: blur(4px);
   background: url("../assests/st.png");
   background-repeat: no-repeat;
   top: 0;

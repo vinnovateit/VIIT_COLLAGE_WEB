@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import html2canvas from "html2canvas";
+import domtoimage from "dom-to-image";
 import $ from "jquery";
 import "../css/gridpage.css";
 import "../css/download.css";
 import { loaddom } from "../actions/initialActions";
 import image from "../assests/VinnovateIT-shape.png";
+import { saveAs } from "file-saver";
 
 const Download = () => {
   const dispatch = useDispatch();
@@ -27,34 +28,41 @@ const Download = () => {
     }
   }, []);
   const share = async () => {
-    var element = document.getElementById("canvas"); // global variable
-    console.log(element);
-    var getCanvas; // global variable
-
-    await html2canvas(element).then((canvas) => {
-      getCanvas = canvas;
-    });
-    var imageData = await getCanvas.toDataURL("image/png");
-    console.log(getCanvas);
-    // Now browser starts downloading it instead of just showing it
-    var newData = imageData.replace(
-      /^data:image\/png/,
-      "data:application/octet-stream"
-    );
-    $("#download").attr("download", "image.png").attr("href", newData);
+    // domtoimage.toBlob(document.getElementById("canvas")).then(function (blob) {
+    //   window.saveAs(blob, "my-node.png");
+    // });
+    document.getElementById("canvas").style.width = "100%";
+    document.getElementById("canvas").style.height = "100%";
+    await domtoimage
+      .toJpeg(document.getElementById("canvas"), { quality: 1 })
+      .then(function (dataUrl) {
+        var link = document.createElement("a");
+        link.download = "my-image-name.jpeg";
+        link.href = dataUrl;
+        link.click();
+      });
+    document.getElementById("canvas").style.width = "40%";
+    document.getElementById("canvas").style.height = "40%";
   };
 
   return (
     <div>
       <div id="canvas" className="canvas">
-        <div className="tag tag1">
-          <h1>VinnoavetIT</h1>
+        <div className="tag">
+          <h1>WallE</h1>
           <img src={image} alt="" />
         </div>
       </div>
-      <a id="download" onClick={share} download="triangle.png">
-        share
-      </a>
+      <div className="message">
+        <div className="text">
+          Loved the idea? Help others to make thier memory eternal through time
+          ! Download the memory wall as a photo and post on instagram story
+          after taging us @VinnovateIT
+        </div>
+        <a id="download" onClick={share}>
+          share
+        </a>
+      </div>
     </div>
   );
 };
