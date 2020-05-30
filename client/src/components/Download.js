@@ -27,23 +27,21 @@ const Download = () => {
     }
   }, []);
   const share = async () => {
-    var element = $("#canvas")[0]; // global variable
+    var element = document.getElementById("canvas"); // global variable
+    console.log(element);
     var getCanvas; // global variable
-    html2canvas(element).then(async function (canvas) {
-      var blob = await canvas.toBlob(function (blob) {
-        const file = new File([blob], "dot.png", blob);
-        if (navigator.share) {
-          navigator.share({
-            files: [file],
-            title: "working",
-            text: "hurray",
-            url: "https://theclubhouse3000.herokuapp.com/",
-          });
-        } else {
-          alert("this feature is only acompatible with mobiles");
-        }
-      });
+
+    await html2canvas(element).then((canvas) => {
+      getCanvas = canvas;
     });
+    var imageData = await getCanvas.toDataURL("image/png");
+    console.log(getCanvas);
+    // Now browser starts downloading it instead of just showing it
+    var newData = imageData.replace(
+      /^data:image\/png/,
+      "data:application/octet-stream"
+    );
+    $("#download").attr("download", "image.png").attr("href", newData);
   };
 
   return (
@@ -53,20 +51,10 @@ const Download = () => {
           <h1>VinnoavetIT</h1>
           <img src={image} alt="" />
         </div>
-        {/* <div className="tag tag2">
-        <h1>VinnoavetIT</h1>
-        <img src={image} alt="" />
       </div>
-      <div className="tag tag3">
-        <h1>VinnoavetIT</h1>
-        <img src={image} alt="" />
-      </div>
-      <div className="tag tag4">
-        <h1>VinnoavetIT</h1>
-        <img src={image} alt="" />
-      </div> */}
-      </div>
-      <button onClick={share}>share</button>
+      <a id="download" onClick={share} download="triangle.png">
+        share
+      </a>
     </div>
   );
 };
