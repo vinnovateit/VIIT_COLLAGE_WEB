@@ -5,12 +5,12 @@
   margin: 10px auto 40px;
   padding: 0;
   background: rgb(5, 5, 5);
-  background-size: cover;
   display: grid;
   grid-template-columns: repeat(10, minmax(10px, 100fr));
   grid-template-rows: repeat(10, minmax(10px, 1fr));
   /* border: solid 10px white; */
   z-index: 1111111;
+  border-radius: 5px;
 }
 
 .tag {
@@ -38,13 +38,31 @@
   margin-left: 10px;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap");
+
 .message {
-  margin: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #8083c9;
+  position: absolute;
+  top: 60%;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 23px;
+  border-radius: 5px;
 }
 
 .message .text {
   margin: 0;
+  text-align: center;
+  font-family: "Chelsea Market", cursive;
+  font-size: 1.2rem;
+}
+
+#download {
+  justify-self: center;
+  color: white;
+  font-family: "Chelsea Market", cursive;
 }

@@ -12,6 +12,7 @@ const Download = () => {
   const dispatch = useDispatch();
   const string = useSelector((state) => state.domReducer.string);
   useEffect(() => {
+    document.querySelector("body").style.background = "whitesmoke";
     async function getdata() {
       await dispatch(loaddom());
     }
@@ -48,6 +49,7 @@ const Download = () => {
   return (
     <div>
       <div id="canvas" className="canvas">
+        <div className="bgd"></div>
         <div className="tag">
           <h1>WallE</h1>
           <img src={image} alt="" />
@@ -55,11 +57,11 @@ const Download = () => {
       </div>
       <div className="message">
         <div className="text">
-          Loved the idea? Help others to make thier memory eternal through time
-          ! Download the memory wall as a photo and post on instagram story
-          after taging us @VinnovateIT
+          Loved the idea 😀 ? Help others to make thier memory eternal through
+          time ! Download the memory wall as a photo and post on instagram story
+          after taging us @VinnovateIT ❤️❤️❤️
         </div>
-        <a id="download" onClick={share}>
+        <a className="btn btn-primary" id="download" onClick={share}>
           share
         </a>
       </div>
