@@ -38,7 +38,6 @@ const Display = () => {
         <h4>ONE IN A MELON</h4>
       </div>
       <div className="grid-display"></div>
-      <div className="bgd"></div>
       <div className="fadeyy"></div>
       <Link to="/interface">
         <img
