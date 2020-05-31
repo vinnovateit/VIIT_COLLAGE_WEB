@@ -29,8 +29,8 @@ const Download = () => {
     }
   }, []);
   const download = async () => {
-    document.getElementById("canvas").style.width = "1519px";
-    document.getElementById("canvas").style.height = "950px";
+    document.getElementById("canvas").style.width = "200vh";
+    document.getElementById("canvas").style.height = "100vh";
     await domtoimage
       .toJpeg(document.getElementById("canvas"), { quality: 1 })
       .then(function (dataUrl) {
@@ -62,7 +62,7 @@ const Download = () => {
           url: "https://the-wall-e.herokuapp.com/",
         });
       } else {
-        alert("this feature is only acompatible with mobiles");
+        alert("this feature is only compactable with mobiles");
       }
     });
   };

@@ -1,10 +1,16 @@
 const initialState = {
   string: "",
   wall: "",
+  id: "",
   isLoading: false,
 };
 const domReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "ID":
+      return {
+        ...state,
+        id: action.payload,
+      };
     case "LOADING_START":
       return {
         ...state,

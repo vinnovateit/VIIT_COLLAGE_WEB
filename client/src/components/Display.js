@@ -2,20 +2,15 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import "../css/gridpage.css";
-import { loaddom } from "../actions/initialActions";
 import { Link } from "react-router-dom";
 import image from "../assests/melon2.png";
 
 const Display = () => {
   document.querySelector("body").style.overflow = "hidden";
   const dispatch = useDispatch();
-  const string = useSelector((state) => state.domReducer.string);
+  var string = useSelector((state) => state.domReducer.string);
   useEffect(() => {
     document.querySelector("body").style.background = "black";
-    async function getdata() {
-      await dispatch(loaddom());
-    }
-    getdata();
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       if (html[i].className == "greedy") {

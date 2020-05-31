@@ -13,11 +13,12 @@ import {
 } from "../actions/initialActions";
 
 const Interface = () => {
+  var id = useSelector((state) => state.domReducer.id);
   const history = useHistory();
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
   const [pre, setPre] = useState(0);
-  const string = useSelector((state) => state.domReducer.string);
+  var string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
   const clear = async () => {
@@ -166,10 +167,6 @@ const Interface = () => {
     document.querySelector("body").style.background = "#f1f2f6";
     document.querySelector("body").style.overflow = "scroll";
 
-    async function getdata() {
-      await dispatch(loaddom());
-    }
-    getdata();
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       if (html[i].className == "greedy") html[i].onclick = select;
@@ -241,7 +238,7 @@ const Interface = () => {
             if (check()) return alert("please select a box");
             if (!pre) return alert("please upload image");
             alert("Are you sure ?");
-            await dispatch(updatedom());
+            await dispatch(updatedom(id));
             history.push(`/download`);
           }}
         >

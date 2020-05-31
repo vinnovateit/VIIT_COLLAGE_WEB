@@ -1,9 +1,24 @@
 import axios from "axios";
-export const updatedom = () => (dispatch) => {
+
+export const setid = (a) => {
+  return {
+    type: "ID",
+    payload: a,
+  };
+};
+export const loaddom = (id) => (dispatch) => {
+  axios.post("/dom/load", { id }).then((res) =>
+    dispatch({
+      type: "LOAD_DOM",
+      payload: res.data,
+    })
+  );
+};
+export const updatedom = (id) => (dispatch) => {
   axios
     .post("/dom/update", {
       string: localStorage.getItem("dom"),
-      id: "5ec37bad021cb63fbe3f31ff",
+      id,
     })
     .then((res) =>
       dispatch({
@@ -19,14 +34,7 @@ export const updatedomlocal = (a) => {
     payload: a,
   };
 };
-export const loaddom = () => (dispatch) => {
-  axios.post("/dom/load", { id: "5ec37bad021cb63fbe3f31ff" }).then((res) =>
-    dispatch({
-      type: "LOAD_DOM",
-      payload: res.data,
-    })
-  );
-};
+
 export const initialdom = () => {
   return {
     type: "CLEAR",
