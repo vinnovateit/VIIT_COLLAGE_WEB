@@ -31,10 +31,6 @@ const Download = () => {
   const download = async () => {
     document.getElementById("canvas").style.width = "1519px";
     document.getElementById("canvas").style.height = "950px";
-    if (navigator.share) {
-      document.getElementById("canvas").style.width = "400px";
-      document.getElementById("canvas").style.height = "400px";
-    }
     await domtoimage
       .toJpeg(document.getElementById("canvas"), { quality: 1 })
       .then(function (dataUrl) {

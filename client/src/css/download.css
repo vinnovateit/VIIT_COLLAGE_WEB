@@ -1,8 +1,8 @@
 .parent-canvas {
   position: relative;
-  width: 40%;
-  height: 40%;
-  margin: 10px auto 40px;
+  width: 30%;
+  height: 20%;
+  margin: 10px auto 10px;
 }
 
 .canvas {
@@ -48,12 +48,10 @@
   flex-direction: column;
   justify-content: center;
   background-color: #8083c9;
-  position: absolute;
-  top: 60%;
   width: 50%;
-  left: 50%;
-  transform: translate(-50%);
   padding: 23px;
+  margin: auto;
+  margin-top: 5px;
   border-radius: 5px;
 }
 
@@ -96,16 +94,12 @@
     flex-direction: column;
     justify-content: center;
     background-color: #8083c9;
-    position: absolute;
-    top: 40%;
     width: 90%;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 23px;
+    padding: 13px;
     border-radius: 5px;
   }
   .message .text {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .tag {
     padding: 5px;

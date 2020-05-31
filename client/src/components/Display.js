@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import image from "../assests/melon2.png";
 
 const Display = () => {
+  document.querySelector("body").style.overflow = "hidden";
   const dispatch = useDispatch();
   const string = useSelector((state) => state.domReducer.string);
   useEffect(() => {

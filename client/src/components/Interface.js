@@ -164,6 +164,8 @@ const Interface = () => {
   };
   useEffect(() => {
     document.querySelector("body").style.background = "#f1f2f6";
+    document.querySelector("body").style.overflow = "scroll";
+
     async function getdata() {
       await dispatch(loaddom());
     }
