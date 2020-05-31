@@ -18,6 +18,7 @@ const Interface = () => {
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
   const [pre, setPre] = useState(0);
+  const [error, setError] = useState(false);
   var string = useSelector((state) => state.domReducer.string);
   const dispatch = useDispatch();
   const [elements, setElements] = useState([]);
@@ -79,7 +80,7 @@ const Interface = () => {
     for (var i = minrow; i <= maxrow; i++) {
       for (var j = mincol; j <= maxcol; j++) {
         if (listy[i][j] != 1) {
-          return alert("please select a box");
+          return 1;
         }
       }
     }
@@ -220,7 +221,9 @@ const Interface = () => {
         <button
           className="btn btn-primary"
           onClick={async () => {
-            check();
+            if (elements.length > 9)
+              return alert("One can select Max of 9 elements !!!");
+            if (check()) return alert("Please select boxes of regular shape");
             if (elements.length == 0) return alert("Please select grids");
             if (url == "") return alert("Please upload image");
             await logic();
@@ -235,7 +238,9 @@ const Interface = () => {
         <button
           class="btn btn-success"
           onClick={async () => {
-            if (check()) return alert("please select a box");
+            if (elements.length > 9)
+              return alert("One can select Max of 9 elements !!!");
+            if (check()) return alert("Please select boxes of regular shape");
             if (!pre) return alert("please upload image");
             alert("Are you sure ?");
             await dispatch(updatedom(id));

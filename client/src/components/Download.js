@@ -4,7 +4,6 @@ import domtoimage from "dom-to-image";
 import $ from "jquery";
 import "../css/gridpage.css";
 import "../css/download.css";
-import { loaddom } from "../actions/initialActions";
 import image from "../assests/VinnovateIT-shape.png";
 import { saveAs } from "file-saver";
 
@@ -13,10 +12,7 @@ const Download = () => {
   const string = useSelector((state) => state.domReducer.string);
   useEffect(() => {
     document.querySelector("body").style.background = "rgb(224, 213, 213)";
-    async function getdata() {
-      await dispatch(loaddom());
-    }
-    getdata();
+
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       if (html[i].className == "greedy") {
