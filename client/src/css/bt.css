@@ -1,0 +1,144 @@
+.bt-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+
+  grid-template-areas: "qq bt-ww bt-ee bt-rr bt-x bt-b bt-b" "bt-tt bt-tt bt-ee bt-pp bt-xx bt-xx bt-hi" "bt-yy bt-uu bt-ii bt-oo bt-zz bt-u bt-hi" "bt-ssd bt-ssd bt-ssd bt-ll bt-zz bt-ss bt-hi" "bt-mm bt-mm bt-to bt-to bt-er bt-er bt-ui" "bt-mm bt-mm bt-txt bt-lol bt-lol bt-ya bt-ui" "bt-op bt-op bt-op bt-lol bt-lol bt-a bt-a" "bt-xy bt-xy bt-vv bt-jj bt-jj bt-pop bt-pop" "bt-xy bt-xy bt-hh bt-hh bt-bb bt-pop pop";
+}
+
+.bt-qq {
+  grid-area: bt-qq;
+}
+
+.bt-ww {
+  grid-area: bt-ww;
+}
+
+.bt-ee {
+  grid-area: bt-ee;
+}
+
+.bt-rr {
+  grid-area: bt-rr;
+}
+
+.bt-tt {
+  grid-area: bt-tt;
+}
+
+.bt-yy {
+  grid-area: bt-yy;
+}
+
+.bt-uu {
+  grid-area: bt-uu;
+}
+
+.bt-ii {
+  grid-area: bt-ii;
+}
+
+.bt-oo {
+  grid-area: bt-oo;
+}
+
+.bt-pp {
+  grid-area: bt-pp;
+}
+
+.bt-xx {
+  grid-area: bt-xx;
+}
+
+.bt-zz {
+  grid-area: bt-zz;
+}
+
+.bt-ss {
+  grid-area: bt-ss;
+}
+
+.bt-ssd {
+  grid-area: bt-ssd;
+}
+
+.bt-ll {
+  grid-area: bt-ll;
+}
+
+.bt-u {
+  grid-area: bt-u;
+}
+
+.bt-mm {
+  grid-area: bt-mm;
+}
+
+.bt-lol {
+  grid-area: bt-lol;
+}
+
+.bt-pop {
+  grid-area: bt-pop;
+}
+
+.bt-xy {
+  grid-area: bt-xy;
+}
+
+.bt-hh {
+  grid-area: bt-hh;
+}
+
+.bt-jj {
+  grid-area: bt-jj;
+}
+
+.bt-bb {
+  grid-area: bt-bb;
+}
+
+.bt-vv {
+  grid-area: bt-vv;
+}
+
+.bt-op {
+  grid-area: bt-op;
+}
+
+.bt-to {
+  grid-area: bt-to;
+}
+
+.bt-txt {
+  grid-area: bt-txt;
+}
+
+.bt-er {
+  grid-area: bt-er;
+}
+
+.bt-ya {
+  grid-area: bt-ya;
+}
+
+.bt-hi {
+  grid-area: bt-hi;
+}
+
+.bt-ui {
+  grid-area: bt-ui;
+}
+
+.bt-a {
+  grid-area: bt-a;
+}
+
+.bt-b {
+  grid-area: bt-b;
+}
+
+.bt-x {
+  grid-area: bt-x;
+}

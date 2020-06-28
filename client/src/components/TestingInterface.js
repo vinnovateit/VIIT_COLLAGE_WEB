@@ -11,14 +11,13 @@ import {
   loadingstop,
   initialdom,
 } from "../actions/initialActions";
-const Interface = () => {
+const TestingInterface = () => {
   const [email, setEmail] = useState("");
   const [url, setUrl] = useState("");
   const [id, setId] = useState("");
   const dispatch = useDispatch();
   let selected = false;
   //const dispatch = useDispatch();
-  var wall = useSelector((state) => state.domReducer.wall);
   var string = useSelector((state) => state.domReducer.string);
 
   const select = (e) => {
@@ -64,19 +63,15 @@ const Interface = () => {
     parent.append(img);
   };
   useEffect(() => {
-    document.querySelector(`.${wall}`).style.height = "100vh";
-    document.querySelector(`.${wall}`).style.width = "100%";
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       html[i].onclick = select;
-      document.querySelector(`.${wall}`).append(html[i]);
+      document.querySelector(".lt-grid-container").append(html[i]);
     }
   }, []);
   return (
     <div className="gridinter">
       <div class="lt-grid-container"></div>
-      <div className="at-grid-container"></div>
-      <div className="bt-grid-container"></div>
       <div className="right">
         <h1>Preview</h1>
         <div class="input-block">
@@ -125,4 +120,4 @@ const Interface = () => {
   );
 };
 
-export default Interface;
+export default TestingInterface;

@@ -1,0 +1,34 @@
+.right-bar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 40%;
+  height: 30%;
+  transform: translateY(-50%);
+  justify-content: space-between;
+  padding: 10px;
+  border-left: 10px solid white;
+  z-index: 1111111111111;
+}
+.right-bar img {
+  height: 40px;
+  width: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+  .right-bar {
+    top: 15%;
+    height: 25%;
+    right: 0;
+    left: unset;
+    justify-content: space-between;
+    padding: 3px;
+    border-right: 5px solid white;
+    border-left: none;
+  }
+  .right-bar img {
+    height: 30px;
+    width: 30px;
+  }
+}

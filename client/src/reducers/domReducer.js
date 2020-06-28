@@ -22,6 +22,13 @@ const domReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case "LOAD_DOM":
+      localStorage.setItem("prevdom", action.payload.string);
+      return {
+        ...state,
+        string: action.payload.string,
+        wall: action.payload.wall,
+        isLoading: false,
+      };
     case "UPDATE_DOM":
       localStorage.setItem("prevdom", action.payload.string);
       return {

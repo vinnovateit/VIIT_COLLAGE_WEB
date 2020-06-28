@@ -8,20 +8,14 @@ import image from "../assests/VinnovateIT-shape.png";
 import { saveAs } from "file-saver";
 
 const Download = () => {
-  const dispatch = useDispatch();
-  const string = useSelector((state) => state.domReducer.string);
+  var string = useSelector((state) => state.domReducer.string);
+  var wall = useSelector((state) => state.domReducer.wall);
   useEffect(() => {
-    document.querySelector("body").style.background = "rgb(224, 213, 213)";
-
+    document.querySelector(`.${wall}`).style.height = "100%";
+    document.querySelector(`.${wall}`).style.width = "100%";
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
-      if (html[i].className == "greedy") {
-        html[i].innerHTML = "";
-        html[i].style.borderColor = "transparent";
-        // html[i].style.background = "#333";
-        html[i].style.pointerEvents = "none";
-      }
-      document.querySelector(".canvas").append(html[i]);
+      document.querySelector(`.${wall}`).append(html[i]);
     }
   }, []);
   const download = async () => {
@@ -67,10 +61,9 @@ const Download = () => {
     <div>
       <div className="parent-canvas" id="canvas">
         <div className="canvas">
-          <div className="tag">
-            <h1>WallE</h1>
-            <img src={image} alt="" />
-          </div>
+          <div class="lt-grid-container"></div>
+          <div className="at-grid-container"></div>
+          <div className="bt-grid-container"></div>
         </div>
       </div>
       <div className="message">

@@ -170,10 +170,7 @@
   margin: 10px;
 }
 
-@font-face {
-  font-family: Clip;
-  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
-}
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 
 @font-face {
   font-family: Glitter;
@@ -187,7 +184,6 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 50%;
   background-image: radial-gradient(
     ellipse 50% 35% at 50% 50%,
     #6b1839,
@@ -197,8 +193,7 @@
   letter-spacing: 2;
   left: 50%;
   top: 40%;
-  font-family: "Clip";
-  text-transform: uppercase;
+  font-family: "Sacramento", cursive;
   font-size: 6em;
   color: #ffe6ff;
   text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
@@ -386,6 +381,7 @@
   }
   .center h1 {
     font-size: 1.5rem;
+    margin: 0;
   }
   .bottom h4 {
     font-size: 1rem;

@@ -9,6 +9,7 @@ import {
   loadingstart,
   loadingstop,
 } from "../actions/initialActions";
+import RightBar from "./Rightbar";
 const Home = () => {
   const dispatch = useDispatch();
   var id = useSelector((state) => state.domReducer.id);
@@ -32,22 +33,8 @@ const Home = () => {
           <Link
             onClick={async () => {
               await dispatch(loadingstart());
-              await dispatch(setid("5ec37bad021cb63fbe3f31ff"));
-              await dispatch(loaddom("5ec37bad021cb63fbe3f31ff"));
-              await history.push("/display");
-              await dispatch(loadingstop());
-              window.location.reload(false);
-            }}
-            className="btn btn-secondary btn-home"
-            to="/display"
-          >
-            Beyond Infinity
-          </Link>
-          <Link
-            onClick={async () => {
-              await dispatch(loadingstart());
-              await dispatch(setid("5ec37bad021cb63fbe3f31ff"));
-              await dispatch(loaddom("5ec37bad021cb63fbe3f31ff"));
+              await dispatch(setid("5ef8b60d44130f5f9426e9d9"));
+              await dispatch(loaddom("5ef8b60d44130f5f9426e9d9"));
               await history.push("/display");
               await dispatch(loadingstop());
               window.location.reload(false);
@@ -60,8 +47,8 @@ const Home = () => {
           <Link
             onClick={async () => {
               await dispatch(loadingstart());
-              await dispatch(setid("5ed3b3ada2d66f9fb8961a55"));
-              await dispatch(loaddom("5ed3b3ada2d66f9fb8961a55"));
+              await dispatch(setid("5ef8b71044130f5f9426e9da"));
+              await dispatch(loaddom("5ef8b71044130f5f9426e9da"));
               await history.push("/display");
               await dispatch(loadingstop());
               window.location.reload(false);
@@ -71,11 +58,26 @@ const Home = () => {
           >
             Wall of Rivera
           </Link>
+          <Link
+            onClick={async () => {
+              await dispatch(loadingstart());
+              await dispatch(setid("5ef8b7c944130f5f9426e9db"));
+              await dispatch(loaddom("5ef8b7c944130f5f9426e9db"));
+              await history.push("/display");
+              await dispatch(loadingstop());
+              window.location.reload(false);
+            }}
+            className="btn btn-secondary btn-home"
+            to="/display"
+          >
+            Wall of Photograpy
+          </Link>
         </div>
       </div>
       <div className="bottom">
         <h4>Made with ❤️ by VinnovateIT</h4>
       </div>
+      <RightBar />
     </div>
   );
 };

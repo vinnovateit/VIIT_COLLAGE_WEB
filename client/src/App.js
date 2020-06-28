@@ -7,6 +7,8 @@ import Loading from "./components/Loading";
 import Download from "./components/Download";
 import { useDispatch } from "react-redux";
 import { loadingstop } from "./actions/initialActions";
+import Testing from "./components/Testing";
+import TestingInterface from "./components/TestingInterface";
 
 const App = () => {
   const dispatch = useDispatch();
