@@ -155,7 +155,7 @@ const Interface = () => {
     data.append("file", files[0]);
     data.append("upload_preset", "kvssankar");
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/sankarkvs/image/upload/q_auto:low",
+      "https://api.cloudinary.com/v1_1/sankarkvs/image/upload",
       {
         method: "POST",
         body: data,
