@@ -41,6 +41,20 @@ const Home = () => {
             className="btn btn-secondary btn-home"
             to="/display"
           >
+            Beyond Infinity
+          </Link>
+          <Link
+            onClick={async () => {
+              await dispatch(loadingstart());
+              await dispatch(setid("5ec37bad021cb63fbe3f31ff"));
+              await dispatch(loaddom("5ec37bad021cb63fbe3f31ff"));
+              await history.push("/display");
+              await dispatch(loadingstop());
+              window.location.reload(false);
+            }}
+            className="btn btn-secondary btn-home"
+            to="/display"
+          >
             Wall of Memories
           </Link>
           <Link
