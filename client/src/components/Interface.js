@@ -85,6 +85,8 @@ const Interface = () => {
       <div class="lt-grid-container"></div>
       <div className="at-grid-container"></div>
       <div className="bt-grid-container"></div>
+      <div className="dt-grid-container"></div>
+
       <div className="right">
         <h1>Preview</h1>
         <div class="input-block">

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import "../css/at.css";
 import "../css/bt.css";
-
+import "../css/dt.css";
 import "../css/gridpage.css";
 import { Link } from "react-router-dom";
 import image from "../assests/melon2.png";
@@ -27,6 +27,7 @@ const Display = () => {
       <div class="lt-grid-container"></div>
       <div className="at-grid-container"></div>
       <div className="bt-grid-container"></div>
+      <div className="dt-grid-container"></div>
       <Link to="/interface">
         <img
           src="https://image.flaticon.com/icons/svg/1828/1828817.svg"
