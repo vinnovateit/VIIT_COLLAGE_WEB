@@ -13,6 +13,7 @@ const Download = () => {
   useEffect(() => {
     document.querySelector(`.${wall}`).style.height = "100%";
     document.querySelector(`.${wall}`).style.width = "100%";
+    document.querySelector(`.${wall}`).style.display = "grid";
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       document.querySelector(`.${wall}`).append(html[i]);

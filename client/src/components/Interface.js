@@ -11,6 +11,7 @@ import {
   loadingstop,
   initialdom,
 } from "../actions/initialActions";
+import { useHistory } from "react-router-dom";
 const Interface = () => {
   const [email, setEmail] = useState("");
   const [url, setUrl] = useState("");
@@ -18,9 +19,10 @@ const Interface = () => {
   const dispatch = useDispatch();
   let selected = false;
   //const dispatch = useDispatch();
+  var bid = useSelector((state) => state.domReducer.id);
   var wall = useSelector((state) => state.domReducer.wall);
   var string = useSelector((state) => state.domReducer.string);
-
+  const history = useHistory();
   const select = (e) => {
     if (selected == true && e.target.style.background != "black") {
       alert("please deselect the previous one");
@@ -57,15 +59,21 @@ const Interface = () => {
     setUrl(file.secure_url);
   };
   const preview = () => {
+    if (id == "") {
+      alert("please select the grid");
+      return;
+    }
     const parent = document.querySelector(`.${id}`);
     var img = document.createElement("img");
     img.className = "grid-img";
     img.src = url;
     parent.append(img);
+    dispatch(updatedomlocal(document.querySelector(`.${wall}`).innerHTML));
   };
   useEffect(() => {
     document.querySelector(`.${wall}`).style.height = "100vh";
-    document.querySelector(`.${wall}`).style.width = "100%";
+    document.querySelector(`.${wall}`).style.width = "60%";
+    document.querySelector(`.${wall}`).style.display = "grid";
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
       html[i].onclick = select;
@@ -114,12 +122,27 @@ const Interface = () => {
           Select grids
         </div>
 
-        <button className="btn btn-danger">clear</button>
+        <button
+          className="btn btn-danger"
+          onClick={() => {
+            window.location.reload(false);
+          }}
+        >
+          clear
+        </button>
         <button className="btn btn-primary" onClick={preview}>
           preview
         </button>
 
-        <button class="btn btn-success">Proceed</button>
+        <button
+          class="btn btn-success"
+          onClick={async () => {
+            await dispatch(updatedom(bid));
+            history.push(`/download`);
+          }}
+        >
+          Proceed
+        </button>
       </div>
     </div>
   );
