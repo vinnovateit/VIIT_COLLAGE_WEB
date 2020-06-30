@@ -138,16 +138,15 @@ const Interface = () => {
 
         <button
           class="btn btn-success"
-          onClick={async () => {
+          onClick={() => {
             if (id === "" && url === "") {
               alert("Please select a grid");
               return;
             }
             document.querySelector(`.${id}`).style.background = "white";
-            await dispatch(
-              updatedomlocal(document.querySelector(`.${wall}`).innerHTML)
+            dispatch(
+              updatedom(bid, document.querySelector(`.${wall}`).innerHTML)
             );
-            await dispatch(updatedom(bid));
             history.push(`/download`);
           }}
         >

@@ -23,10 +23,10 @@ export const loaddomer = (id) => (dispatch) => {
     });
   });
 };
-export const updatedom = (id) => (dispatch) => {
+export const updatedom = (id, a) => (dispatch) => {
   axios
     .post("/dom/update", {
-      string: localStorage.getItem("dom"),
+      string: a,
       id,
     })
     .then((res) =>
