@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   loadingstart,
   setid,
-  loaddom,
+  loaddomer,
   loadingstop,
   updatedomlocal,
   updatedom,
@@ -26,11 +26,10 @@ const Admin = () => {
   const getdata = async (a) => {
     await dispatch(loadingstart());
     await dispatch(setid(a));
-    await dispatch(loaddom(a));
+    await dispatch(loaddomer(a));
     document.querySelector(`.${wall}`).style.height = "100vh";
     document.querySelector(`.${wall}`).style.width = "100%";
     document.querySelector(`.${wall}`).style.display = "grid";
-    document.querySelector(`.${wall}`).style.background = "black";
     var html = $($.parseHTML(string));
     const deleted = (e) => {
       let ans = prompt("Wanna delte this then press Y or else N");
@@ -92,6 +91,9 @@ const Admin = () => {
       <div className="lt-grid-container"></div>
       <div className="at-grid-container"></div>
       <div className="bt-grid-container"></div>
+      <div className="et-grid-container"></div>
+      <div className="dt-grid-container"></div>
+      <div className="ft-grid-container"></div>
     </div>
   );
 };

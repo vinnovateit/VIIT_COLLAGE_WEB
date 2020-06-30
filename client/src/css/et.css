@@ -1,0 +1,99 @@
+.et-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "tt et-ttt et-ttt et-y et-e et-dd et-dd" "et-tt et-ttt et-ttt et-y et-t et-dd et-dd" "et-tt et-a et-er et-er et-rt et-rt et-io" "et-w et-ee et-er et-er et-rt et-rt et-io" "et-rtr et-rtr et-f et-f et-gg et-hh et-io" "et-rtr et-rtr et-g et-g et-pp et-pp et-yy" "et-tttt et-tttt et-r et-i et-pp et-pp op";
+}
+
+.et-dd {
+  grid-area: et-dd;
+}
+
+.et-er {
+  grid-area: et-er;
+}
+
+.et-rt {
+  grid-area: et-rt;
+}
+
+.et-tt {
+  grid-area: et-tt;
+}
+
+.et-ttt {
+  grid-area: et-ttt;
+}
+
+.et-y {
+  grid-area: et-y;
+}
+
+.et-e {
+  grid-area: et-e;
+}
+
+.et-t {
+  grid-area: et-t;
+}
+
+.et-a {
+  grid-area: et-a;
+}
+
+.et-w {
+  grid-area: et-w;
+}
+
+.et-ee {
+  grid-area: et-ee;
+}
+
+.et-rtr {
+  grid-area: et-rtr;
+}
+
+.et-tttt {
+  grid-area: et-tttt;
+}
+
+.et-f {
+  grid-area: et-f;
+}
+
+.et-g {
+  grid-area: et-g;
+}
+
+.et-r {
+  grid-area: et-r;
+}
+
+.et-i {
+  grid-area: et-i;
+}
+
+.et-gg {
+  grid-area: et-gg;
+}
+
+.et-hh {
+  grid-area: et-hh;
+}
+
+.et-io {
+  grid-area: et-io;
+}
+
+.et-pp {
+  grid-area: et-pp;
+}
+
+.et-yy {
+  grid-area: et-yy;
+}
+
+.et-op {
+  grid-area: et-op;
+}

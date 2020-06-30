@@ -1,0 +1,155 @@
+.ft-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "e ft-r ft-t ft-y ft-u ft-ff ft-ff" "ft-ee ft-f ft-g ft-h ft-yu ft-ff ft-ff" "ft-fg ft-fg ft-gg ft-ggg ft-gggg ft-ggggg ft-gggggg" "ft-fg ft-fg ft-n ft-hhhhh ft-hhhh ft-hh ft-hhh" "ft-c ft-cc ft-ccc ft-b ft-bb ft-kl ft-kl" "ft-lk ft-nn ft-bbbbb ft-bbbb ft-bbb ft-kl ft-kl" "ft-ggj ft-ggj ft-ggj ft-yuu ft-yuu ft-lkl l";
+}
+
+.ft-ff {
+  grid-area: ft-ff;
+}
+
+.ft-e {
+  grid-area: ft-e;
+}
+
+.ft-r {
+  grid-area: ft-r;
+}
+
+.ft-t {
+  grid-area: ft-t;
+}
+
+.ft-y {
+  grid-area: ft-y;
+}
+
+.ft-u {
+  grid-area: ft-u;
+}
+
+.ft-ee {
+  grid-area: ft-ee;
+}
+
+.ft-f {
+  grid-area: ft-f;
+}
+
+.ft-g {
+  grid-area: ft-g;
+}
+
+.ft-h {
+  grid-area: ft-h;
+}
+
+.ft-yu {
+  grid-area: ft-yu;
+}
+
+.ft-fg {
+  grid-area: ft-fg;
+}
+
+.ft-gg {
+  grid-area: ft-gg;
+}
+
+.ft-ggg {
+  grid-area: ft-ggg;
+}
+
+.ft-gggg {
+  grid-area: ft-gggg;
+}
+
+.ft-ggggg {
+  grid-area: ft-ggggg;
+}
+
+.ft-gggggg {
+  grid-area: ft-gggggg;
+}
+
+.ft-hhh {
+  grid-area: ft-hhh;
+}
+
+.ft-hh {
+  grid-area: ft-hh;
+}
+
+.ft-hhhh {
+  grid-area: ft-hhhh;
+}
+
+.ft-hhhhh {
+  grid-area: ft-hhhhh;
+}
+
+.ft-n {
+  grid-area: ft-n;
+}
+
+.ft-kl {
+  grid-area: ft-kl;
+}
+
+.ft-c {
+  grid-area: ft-c;
+}
+
+.ft-cc {
+  grid-area: ft-cc;
+}
+
+.ft-ccc {
+  grid-area: ft-ccc;
+}
+
+.ft-b {
+  grid-area: ft-b;
+}
+
+.ft-bb {
+  grid-area: ft-bb;
+}
+
+.ft-bbb {
+  grid-area: ft-bbb;
+}
+
+.ft-bbbb {
+  grid-area: ft-bbbb;
+}
+
+.ft-bbbbb {
+  grid-area: ft-bbbbb;
+}
+
+.ft-nn {
+  grid-area: ft-nn;
+}
+
+.ft-lk {
+  grid-area: ft-lk;
+}
+
+.ft-ggj {
+  grid-area: ft-ggj;
+}
+
+.ft-yuu {
+  grid-area: ft-yuu;
+}
+
+.ft-lkl {
+  grid-area: ft-lkl;
+}
+
+.ft-l {
+  grid-area: ft-l;
+}

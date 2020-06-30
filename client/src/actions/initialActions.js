@@ -15,6 +15,14 @@ export const loaddom = (id) => (dispatch) => {
     window.location.replace("/display");
   });
 };
+export const loaddomer = (id) => (dispatch) => {
+  axios.post("/dom/load", { id }).then((res) => {
+    dispatch({
+      type: "LOAD_DOM",
+      payload: res.data,
+    });
+  });
+};
 export const updatedom = (id) => (dispatch) => {
   axios
     .post("/dom/update", {

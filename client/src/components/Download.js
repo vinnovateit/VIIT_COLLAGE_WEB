@@ -64,6 +64,8 @@ const Download = () => {
           <div className="at-grid-container"></div>
           <div className="bt-grid-container"></div>
           <div className="dt-grid-container"></div>
+          <div className="et-grid-container"></div>
+          <div className="ft-grid-container"></div>
         </div>
       </div>
       <div className="message">

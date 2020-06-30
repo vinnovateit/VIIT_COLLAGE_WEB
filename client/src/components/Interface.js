@@ -66,7 +66,6 @@ const Interface = () => {
     img.className = "grid-img";
     img.src = url;
     parent.append(img);
-    dispatch(updatedomlocal(document.querySelector(`.${wall}`).innerHTML));
   };
   useEffect(() => {
     document.querySelector("body").style.background = "white";
@@ -85,6 +84,8 @@ const Interface = () => {
       <div className="at-grid-container"></div>
       <div className="bt-grid-container"></div>
       <div className="dt-grid-container"></div>
+      <div className="et-grid-container"></div>
+      <div className="ft-grid-container"></div>
 
       <div className="right">
         <h1>Preview</h1>
@@ -138,10 +139,14 @@ const Interface = () => {
         <button
           class="btn btn-success"
           onClick={async () => {
-            if (!selected) {
+            if (id === "" && url === "") {
               alert("Please select a grid");
               return;
             }
+            document.querySelector(`.${id}`).style.background = "white";
+            await dispatch(
+              updatedomlocal(document.querySelector(`.${wall}`).innerHTML)
+            );
             await dispatch(updatedom(bid));
             history.push(`/download`);
           }}
