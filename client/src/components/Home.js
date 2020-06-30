@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/home.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loaddom, setid } from "../actions/initialActions";
 import RightBar from "./Rightbar";
@@ -59,10 +59,31 @@ const Home = () => {
                         }}
                         className="btn btn-secondary btn-home"
                     >
-                        Meme Wall
+                        Trips and Party Wall
+                    </button>
+                    <button
+                        onClick={async () => {
+                            await dispatch(setid("5efacc41cb0e5aa0b29dac5a"));
+                            await dispatch(loaddom("5efacc41cb0e5aa0b29dac5a"));
+                        }}
+                        className="btn btn-secondary btn-home"
+                    >
+                        Web series Wall
+                    </button>
+                    <button
+                        onClick={async () => {
+                            await dispatch(setid("5efacc41cb0e5aa0b29dac5a"));
+                            await dispatch(loaddom("5efacc41cb0e5aa0b29dac5a"));
+                        }}
+                        className="btn btn-secondary btn-home"
+                    >
+                        VinnovateIT Wall
                     </button>
                 </div>
             </div>
+            <Link to="/form">
+                <div className="form_reminder_div">👂</div>
+            </Link>
             <div className="bottom">
                 <h4>Made with ❤️ by VinnovateIT</h4>
             </div>

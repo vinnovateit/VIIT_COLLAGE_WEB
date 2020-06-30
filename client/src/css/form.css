@@ -1,0 +1,11 @@
+.form_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #17202a;
+    /* border: 2px solid red; */
+}

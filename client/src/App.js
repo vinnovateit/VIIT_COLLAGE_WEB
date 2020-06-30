@@ -8,24 +8,26 @@ import Download from "./components/Download";
 import { useDispatch } from "react-redux";
 import { loadingstop } from "./actions/initialActions";
 import Admin from "./components/Admin";
+import Form from "./components/Form";
 
 const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadingstop());
-  }, []);
-  return (
-    <Router>
-      <Loading />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/interface" component={Interface} />
-        <Route path="/display" component={Display} />
-        <Route path="/download" component={Download} />
-        <Route path="/beyondinfinity" component={Admin} />
-      </Switch>
-    </Router>
-  );
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadingstop());
+    }, []);
+    return (
+        <Router>
+            <Loading />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/interface" component={Interface} />
+                <Route path="/display" component={Display} />
+                <Route path="/download" component={Download} />
+                <Route path="/beyondinfinity" component={Admin} />
+                <Route path="/form" component={Form}></Route>
+            </Switch>
+        </Router>
+    );
 };
 
 export default App;
