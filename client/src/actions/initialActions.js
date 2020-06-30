@@ -7,12 +7,13 @@ export const setid = (a) => {
   };
 };
 export const loaddom = (id) => (dispatch) => {
-  axios.post("/dom/load", { id }).then((res) =>
+  axios.post("/dom/load", { id }).then((res) => {
     dispatch({
       type: "LOAD_DOM",
       payload: res.data,
-    })
-  );
+    });
+    window.location.replace("/display");
+  });
 };
 export const updatedom = (id) => (dispatch) => {
   axios

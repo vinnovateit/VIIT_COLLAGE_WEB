@@ -1,131 +1,103 @@
 .at-grid-container {
-  display: none;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 1px 1px;
-  grid-template-areas: "as at-efef at-ggh at-sfdf at-ui at-pot at-uuu" "at-as at-yu at-yu at-yu at-nj at-uio at-uuu" "at-as at-dsd at-sas at-saas at-yuyu at-yuyu at-yuyu" "at-as at-sasa at-hj at-hj at-asasa at-kll at-kkl" "at-jk at-jk at-hj at-hj at-sasas at-kll at-ert" "at-jk at-jk at-po at-po at-sa at-kll at-rtty" "at-yui at-yui at-po at-po at-hjjh at-hjjh at-io" "at-yui at-yui at-s at-gtt at-ioo at-ioo io";
+  grid-template-areas: "gh at-gh at-yy at-yy at-fg at-fg" "at-u at-ui at-io at-io at-fg at-fg" "at-a at-ui at-uii at-ty at-ty ." "at-d at-ui at-uii at-ty at-ty ." "at-f at-g at-j at-l at-uio at-popy" "at-ff at-y at-pop at-pop at-h at-popy" "at-t at-uioo at-pop at-pop at-k lo";
 }
 
-.at-hj {
-  grid-area: at-hj;
+.at-fg {
+  grid-area: at-fg;
 }
 
-.at-as {
-  grid-area: at-as;
-}
-
-.at-yui {
-  grid-area: at-yui;
-}
-
-.at-yu {
-  grid-area: at-yu;
-}
-
-.at-kll {
-  grid-area: at-kll;
-}
-
-.at-jk {
-  grid-area: at-jk;
-}
-
-.at-po {
-  grid-area: at-po;
-}
-
-.at-dsd {
-  grid-area: at-dsd;
-}
-
-.at-efef {
-  grid-area: at-efef;
-}
-
-.at-ggh {
-  grid-area: at-ggh;
-}
-
-.at-sfdf {
-  grid-area: at-sfdf;
-}
-
-.at-saas {
-  grid-area: at-saas;
-}
-
-.at-sas {
-  grid-area: at-sas;
-}
-
-.at-sasa {
-  grid-area: at-sasa;
-}
-
-.at-asasa {
-  grid-area: at-asasa;
-}
-
-.at-sasas {
-  grid-area: at-sasas;
-}
-
-.at-sa {
-  grid-area: at-sa;
-}
-
-.at-kkl {
-  grid-area: at-kkl;
-}
-
-.at-ert {
-  grid-area: at-ert;
-}
-
-.at-rtty {
-  grid-area: at-rtty;
-}
-
-.at-s {
-  grid-area: at-s;
-}
-
-.at-gtt {
-  grid-area: at-gtt;
-}
-
-.at-uuu {
-  grid-area: at-uuu;
-}
-
-.at-yuyu {
-  grid-area: at-yuyu;
+.at-gh {
+  grid-area: at-gh;
 }
 
 .at-ui {
   grid-area: at-ui;
 }
 
-.at-pot {
-  grid-area: at-pot;
+.at-io {
+  grid-area: at-io;
 }
 
-.at-nj {
-  grid-area: at-nj;
+.at-pop {
+  grid-area: at-pop;
+}
+
+.at-popy {
+  grid-area: at-popy;
+}
+
+.at-ty {
+  grid-area: at-ty;
+}
+
+.at-uii {
+  grid-area: at-uii;
+}
+
+.at-yy {
+  grid-area: at-yy;
+}
+
+.at-u {
+  grid-area: at-u;
+}
+
+.at-a {
+  grid-area: at-a;
+}
+
+.at-d {
+  grid-area: at-d;
+}
+
+.at-f {
+  grid-area: at-f;
+}
+
+.at-g {
+  grid-area: at-g;
+}
+
+.at-j {
+  grid-area: at-j;
+}
+
+.at-l {
+  grid-area: at-l;
 }
 
 .at-uio {
   grid-area: at-uio;
 }
 
-.at-io {
-  grid-area: at-io;
+.at-h {
+  grid-area: at-h;
 }
 
-.at-hjjh {
-  grid-area: at-hjjh;
+.at-k {
+  grid-area: at-k;
 }
 
-.at-ioo {
-  grid-area: at-ioo;
+.at-lo {
+  grid-area: at-lo;
+}
+
+.at-ff {
+  grid-area: at-ff;
+}
+
+.at-t {
+  grid-area: at-t;
+}
+
+.at-y {
+  grid-area: at-y;
+}
+
+.at-uioo {
+  grid-area: at-uioo;
 }

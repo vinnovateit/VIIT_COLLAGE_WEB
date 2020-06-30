@@ -4,12 +4,10 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import $ from "jquery";
 import {
-  loaddom,
   updatedomlocal,
   updatedom,
   loadingstart,
   loadingstop,
-  initialdom,
 } from "../actions/initialActions";
 import { useHistory } from "react-router-dom";
 const Interface = () => {
@@ -71,6 +69,7 @@ const Interface = () => {
     dispatch(updatedomlocal(document.querySelector(`.${wall}`).innerHTML));
   };
   useEffect(() => {
+    document.querySelector("body").style.background = "white";
     document.querySelector(`.${wall}`).style.height = "100vh";
     document.querySelector(`.${wall}`).style.width = "60%";
     document.querySelector(`.${wall}`).style.display = "grid";
@@ -139,6 +138,10 @@ const Interface = () => {
         <button
           class="btn btn-success"
           onClick={async () => {
+            if (!selected) {
+              alert("Please select a grid");
+              return;
+            }
             await dispatch(updatedom(bid));
             history.push(`/download`);
           }}

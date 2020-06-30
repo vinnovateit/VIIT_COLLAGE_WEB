@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import domtoimage from "dom-to-image";
 import $ from "jquery";
 import "../css/gridpage.css";
 import "../css/download.css";
-import image from "../assests/VinnovateIT-shape.png";
-import { saveAs } from "file-saver";
 
 const Download = () => {
   var string = useSelector((state) => state.domReducer.string);

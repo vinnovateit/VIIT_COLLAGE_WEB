@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../css/home.css";
-import { useHistory, Link } from "react-router-dom";
-import Image from "../assests/VinnovateIT-shape.png";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  loaddom,
-  setid,
-  loadingstart,
-  loadingstop,
-} from "../actions/initialActions";
+import { loaddom, setid } from "../actions/initialActions";
 import RightBar from "./Rightbar";
 const Home = () => {
   const dispatch = useDispatch();
@@ -30,48 +24,42 @@ const Home = () => {
       <div className="center">
         <h1>Make your memories eternal through the wheel of time...</h1>
         <div className="buttons">
-          <Link
+          <button
             onClick={async () => {
-              await dispatch(loadingstart());
               await dispatch(setid("5ef8b60d44130f5f9426e9d9"));
               await dispatch(loaddom("5ef8b60d44130f5f9426e9d9"));
-              await history.push("/display");
-              await dispatch(loadingstop());
-              window.location.reload(false);
             }}
             className="btn btn-secondary btn-home"
-            to="/display"
           >
             Wall of Memories
-          </Link>
-          <Link
+          </button>
+          <button
             onClick={async () => {
-              await dispatch(loadingstart());
               await dispatch(setid("5ef8b71044130f5f9426e9da"));
               await dispatch(loaddom("5ef8b71044130f5f9426e9da"));
-              await history.push("/display");
-              await dispatch(loadingstop());
-              window.location.reload(false);
             }}
             className="btn btn-secondary btn-home"
-            to="/display"
           >
-            Wall of Rivera
-          </Link>
-          <Link
+            Wall of Riviera
+          </button>
+          <button
             onClick={async () => {
-              await dispatch(loadingstart());
               await dispatch(setid("5ef8b7c944130f5f9426e9db"));
               await dispatch(loaddom("5ef8b7c944130f5f9426e9db"));
-              await history.push("/display");
-              await dispatch(loadingstop());
-              window.location.reload(false);
             }}
             className="btn btn-secondary btn-home"
-            to="/display"
           >
-            Wall of Photograpy
-          </Link>
+            Wall of Photography
+          </button>
+          <button
+            onClick={async () => {
+              await dispatch(setid("5efacc41cb0e5aa0b29dac5a"));
+              await dispatch(loaddom("5efacc41cb0e5aa0b29dac5a"));
+            }}
+            className="btn btn-secondary btn-home"
+          >
+            Wall of Lockdown moods
+          </button>
         </div>
       </div>
       <div className="bottom">
