@@ -485,4 +485,7 @@
             0 15px 12px rgba(0, 0, 0, 0.22);
         background-color: #fbfcfc;
     }
+    .sub_heading {
+        display: none;
+    }
 }

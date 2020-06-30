@@ -23,7 +23,9 @@ const Home = () => {
                 <span class="flicker">E</span>
             </div>
             <div className="center">
-                <h1>Make your memories eternal through the wheel of time...</h1>
+                <h1 className="sub_heading">
+                    Make your memories eternal through the wheel of time...
+                </h1>
                 <div className="buttons">
                     <button
                         onClick={async () => {
