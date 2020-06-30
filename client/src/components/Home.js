@@ -63,8 +63,12 @@ const Home = () => {
                     </button>
                     <button
                         onClick={async () => {
-                            await dispatch(setid("5efacc41cb0e5aa0b29dac5a"));
-                            await dispatch(loaddom("5efacc41cb0e5aa0b29dac5a"));
+                            await dispatch(
+                                setid("5efacc41cb0e5aa0b29dac5a_web_series")
+                            );
+                            await dispatch(
+                                loaddom("5efacc41cb0e5aa0b29dac5a_web_series")
+                            );
                         }}
                         className="btn btn-secondary btn-home"
                     >
@@ -72,8 +76,12 @@ const Home = () => {
                     </button>
                     <button
                         onClick={async () => {
-                            await dispatch(setid("5efacc41cb0e5aa0b29dac5a"));
-                            await dispatch(loaddom("5efacc41cb0e5aa0b29dac5a"));
+                            await dispatch(
+                                setid("5efacc41cb0e5aa0b29dac5a_vinnovate_it")
+                            );
+                            await dispatch(
+                                loaddom("5efacc41cb0e5aa0b29dac5a_vinnovate_it")
+                            );
                         }}
                         className="btn btn-secondary btn-home"
                     >
