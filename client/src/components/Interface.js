@@ -62,10 +62,13 @@ const Interface = () => {
       return;
     }
     const parent = document.querySelector(`.${id}`);
+    var anchor = document.createElement("a");
+    anchor.href = `https://www.instagram.com/${email}`;
     var img = document.createElement("img");
     img.className = "grid-img";
     img.src = url;
-    parent.append(img);
+    anchor.append(img);
+    parent.append(anchor);
   };
   useEffect(() => {
     document.querySelector("body").style.background = "white";
@@ -90,15 +93,15 @@ const Interface = () => {
       <div className="right">
         <h1>Preview</h1>
         <div class="input-block">
-          <label for="name" class="input-label">
-            Email
+          <label for="instagram_handle" class="input-label">
+            Instagram
           </label>
           <input
             type="text"
-            name="email"
-            id="email"
+            name="instagram_handle_input"
+            id="instagram_handle"
             value={email}
-            placeholder="Enter your email"
+            placeholder="Enter your Instagram handle."
             onChange={(e) => {
               setEmail(e.target.value);
             }}
