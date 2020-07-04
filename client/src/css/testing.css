@@ -187,12 +187,10 @@
   border: 1px solid black;
   transition: all 0.5s ease-in-out;
 }
-/* 
+
 .gridinter div div:hover {
   transform: scale(1.05);
-  background-color: rgb(32, 31, 31);
-  color: white !important;
-} */
+}
 
 .grid-img {
   height: 100%;

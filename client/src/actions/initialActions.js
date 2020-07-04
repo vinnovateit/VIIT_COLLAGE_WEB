@@ -12,7 +12,7 @@ export const loaddom = (id) => (dispatch) => {
       type: "LOAD_DOM",
       payload: res.data,
     });
-    window.location.replace("/display");
+    window.location.href = "/display";
   });
 };
 export const loaddomer = (id) => (dispatch) => {
@@ -29,12 +29,13 @@ export const updatedom = (id, a) => (dispatch) => {
       string: a,
       id,
     })
-    .then((res) =>
+    .then((res) => {
       dispatch({
         type: "UPDATE_DOM",
         payload: res.data,
-      })
-    );
+      });
+      window.location.href = "/download";
+    });
 };
 
 export const updatedomlocal = (a) => {

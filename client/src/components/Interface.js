@@ -145,9 +145,11 @@ const Interface = () => {
             }
             document.querySelector(`.${id}`).style.background = "white";
             dispatch(
+              updatedomlocal(document.querySelector(`.${wall}`).innerHTML)
+            );
+            dispatch(
               updatedom(bid, document.querySelector(`.${wall}`).innerHTML)
             );
-            history.push(`/download`);
           }}
         >
           Proceed
