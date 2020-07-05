@@ -4,8 +4,10 @@ import domtoimage from "dom-to-image";
 import $ from "jquery";
 import "../css/gridpage.css";
 import "../css/download.css";
+import { useHistory } from "react-router-dom";
 
 const Download = () => {
+  var history = useHistory();
   var string = useSelector((state) => state.domReducer.string);
   var wall = useSelector((state) => state.domReducer.wall);
   useEffect(() => {
@@ -83,6 +85,15 @@ const Download = () => {
           </button>
         </div>
       </div>
+      <img
+        src="https://image.flaticon.com/icons/svg/3039/3039481.svg"
+        alt=""
+        className="back"
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          history.push("/");
+        }}
+      />
     </div>
   );
 };

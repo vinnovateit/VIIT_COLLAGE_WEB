@@ -80,6 +80,12 @@ const Interface = () => {
       html[i].onclick = select;
       document.querySelector(`.${wall}`).append(html[i]);
     }
+    $("html,body").animate(
+      {
+        scrollTop: $(".right").offset().top,
+      },
+      1000
+    );
   }, []);
   return (
     <div className="gridinter">
@@ -158,6 +164,15 @@ const Interface = () => {
           Proceed
         </button>
       </div>
+      <img
+        src="https://image.flaticon.com/icons/svg/3039/3039481.svg"
+        alt=""
+        className="back"
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          history.push("/");
+        }}
+      />
     </div>
   );
 };
