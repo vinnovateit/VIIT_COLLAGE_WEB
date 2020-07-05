@@ -2,7 +2,7 @@
   display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 0;
   grid-template-areas: "b lt-xx lt-xx lt-e lt-f lt-ff lt-ff" "lt-a lt-c lt-d lt-jj lt-jj lt-ff lt-ff" "lt-hh lt-g lt-h lt-j lt-k lt-l lt-m" "lt-hh lt-sdsd lt-ss lt-ss lt-ss lt-o lt-n" "lt-sdsds lt-fff lt-ss lt-ss lt-ss lt-p lt-q" "lt-dsd lt-ccc lt-ddd lt-aa lt-s lt-r lt-ll" "lt-fdfff lt-kk lt-kk lt-z lt-dd lt-dd lt-ll" "lt-sdsdd lt-kk lt-kk lt-y lt-t lt-u lt-ll" "lt-yy lt-yy lt-yy lt-x lt-w lt-v ll";
 }
 

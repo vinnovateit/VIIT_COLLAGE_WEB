@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 0;
   grid-template-areas: "gh at-gh at-yy at-yy at-fg at-fg" "at-u at-ui at-io at-io at-fg at-fg" "at-a at-ui at-uii at-ty at-ty ." "at-d at-ui at-uii at-ty at-ty ." "at-f at-g at-j at-l at-uio at-popy" "at-ff at-y at-pop at-pop at-h at-popy" "at-t at-uioo at-pop at-pop at-k lo";
 }
 

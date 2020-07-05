@@ -2,7 +2,7 @@
   display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 0;
   grid-template-areas: "fg bt-err bt-err bt-ui bt-ui" "bt-er bt-err bt-err bt-ui bt-ui" "bt-er bt-sd bt-pp bt-pp bt-y" "bt-er bt-fgff bt-pp bt-pp bt-ikj" "bt-kk bt-fgf bt-fgf bt-o bt-ere" "bt-ty bt-fgf bt-fgf bt-i bt-ere" "bt-ty bt-tyr bt-yu bt-yu bt-ere" "bt-rt bt-vb bt-yu bt-yu bt-p" "bt-oo bt-oo bt-df bt-erre bt-erre" "bt-oo bt-oo bt-t bt-erre bt-erre" "bt-a bt-r bt-ioo bt-ioo bt-tyre" "bt-d bt-g bt-ioo bt-ioo j";
 }
 

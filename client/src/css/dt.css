@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 0;
   grid-template-areas: "dd dt-ee dt-ee dt-ee dt-ee dt-ff dt-ff" "dt-dd dt-cc dt-cc dt-gg dt-gg dt-ff dt-ff" "dt-dd dt-cc dt-cc dt-hh dt-hh dt-jj dt-jj" "dt-aa dt-aa dt-ii dt-ii dt-ll dt-kk dt-mm" "dt-aa dt-aa dt-ii dt-ii dt-ll dt-kk dt-mm" "dt-bb dt-bb dt-oo dt-ss dt-ss dt-uu dt-tt" "dt-bb dt-bb dt-pp dt-nn dt-nn dt-nn dt-tt" "dt-bb dt-bb dt-qq dt-nn dt-nn dt-nn dt-vv" "dt-bb dt-bb dt-rr dt-rr dt-rr dt-xx xx";
 }
 

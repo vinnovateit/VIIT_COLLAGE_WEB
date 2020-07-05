@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 0;
   grid-template-areas: "tt et-ttt et-ttt et-y et-e et-dd et-dd" "et-tt et-ttt et-ttt et-y et-t et-dd et-dd" "et-tt et-a et-er et-er et-rt et-rt et-io" "et-w et-ee et-er et-er et-rt et-rt et-io" "et-rtr et-rtr et-f et-f et-gg et-hh et-io" "et-rtr et-rtr et-g et-g et-pp et-pp et-yy" "et-tttt et-tttt et-r et-i et-pp et-pp op";
 }
 

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 0;
   grid-template-areas: "e ft-r ft-t ft-y ft-u ft-ff ft-ff" "ft-ee ft-f ft-g ft-h ft-yu ft-ff ft-ff" "ft-fg ft-fg ft-gg ft-ggg ft-gggg ft-ggggg ft-gggggg" "ft-fg ft-fg ft-n ft-hhhhh ft-hhhh ft-hh ft-hhh" "ft-c ft-cc ft-ccc ft-b ft-bb ft-kl ft-kl" "ft-lk ft-nn ft-bbbbb ft-bbbb ft-bbb ft-kl ft-kl" "ft-ggj ft-ggj ft-ggj ft-yuu ft-yuu ft-lkl l";
 }
 
