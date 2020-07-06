@@ -152,6 +152,10 @@ const Interface = () => {
               alert("Please select a grid");
               return;
             }
+            if (email === "") {
+              alert("Please enter your insta handle");
+              return;
+            }
             document.querySelector(`.${id}`).style.background = "white";
             dispatch(
               updatedomlocal(document.querySelector(`.${wall}`).innerHTML)
