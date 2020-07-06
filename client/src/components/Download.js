@@ -16,7 +16,6 @@ const Download = () => {
     document.querySelector(`.${wall}`).style.display = "grid";
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
-      html[i].background = "black";
       document.querySelector(`.${wall}`).append(html[i]);
     }
   }, []);
