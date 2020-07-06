@@ -100,7 +100,7 @@ const Interface = () => {
         <h1>Preview</h1>
         <div class="input-block">
           <label for="instagram_handle" class="input-label">
-            Instagram
+            Instagram Username
           </label>
           <input
             type="text"
@@ -157,9 +157,7 @@ const Interface = () => {
               return;
             }
             document.querySelector(`.${id}`).style.background = "white";
-            dispatch(
-              updatedomlocal(document.querySelector(`.${wall}`).innerHTML)
-            );
+
             dispatch(
               updatedom(bid, document.querySelector(`.${wall}`).innerHTML)
             );
