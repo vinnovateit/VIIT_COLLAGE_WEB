@@ -97,7 +97,7 @@ const Home = () => {
             VinnovateIT Wall
           </button>
         </div>
-        <h1 className="warning" style={{ display: dis }}>
+        <h1 className="warning" style={{ display: dis ? "block" : "none" }}>
           This website is not friendly for larger devices, Please open the
           website in your mobile <br /> 🥰🥰🥰
         </h1>
