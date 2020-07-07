@@ -58,6 +58,10 @@ const Interface = () => {
   };
   let pre = 0;
   const preview = () => {
+    if (pre) {
+      alert("Please click on proceed");
+      return;
+    }
     if (id == "") {
       alert("please select the grid");
       return;
