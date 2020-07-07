@@ -17,11 +17,11 @@ const Home = () => {
   // }, []);
   const history = useHistory();
   const [dis, setDis] = useState(false);
-  useEffect(() => {
-    if (!navigator.share) {
-      setDis(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!navigator.share) {
+  //     setDis(true);
+  //   }
+  // }, []);
   return (
     <div>
       <div className="bg"></div>

@@ -79,7 +79,7 @@ const Interface = () => {
   useEffect(() => {
     document.querySelector("body").style.background = "white";
     document.querySelector(`.${wall}`).style.height = "100vh";
-    document.querySelector(`.${wall}`).style.width = "60%";
+    document.querySelector(`.${wall}`).style.width = "100%";
     document.querySelector(`.${wall}`).style.display = "grid";
     const html = $($.parseHTML(string));
     for (var i = 0; i < html.length; i++) {
