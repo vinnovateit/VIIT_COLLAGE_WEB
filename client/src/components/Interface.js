@@ -56,6 +56,7 @@ const Interface = () => {
     const file = await res.json();
     setUrl(file.secure_url);
   };
+  let pre = 0;
   const preview = () => {
     if (id == "") {
       alert("please select the grid");
@@ -69,6 +70,7 @@ const Interface = () => {
     img.src = url;
     anchor.append(img);
     parent.append(anchor);
+    pre = 1;
   };
   useEffect(() => {
     document.querySelector("body").style.background = "white";
@@ -137,6 +139,7 @@ const Interface = () => {
           className="btn btn-danger"
           onClick={() => {
             window.location.reload(false);
+            pre = 0;
           }}
         >
           clear
@@ -148,6 +151,10 @@ const Interface = () => {
         <button
           class="btn btn-success"
           onClick={() => {
+            if (!pre) {
+              alert("Please preview image");
+              return;
+            }
             if (id === "" && url === "") {
               alert("Please select a grid");
               return;
